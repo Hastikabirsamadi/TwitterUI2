@@ -1,14 +1,29 @@
 package com.example.demo;
 
+import Client.Client;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class HelloController {
-    @FXML
-    private Label welcomeText;
+import java.io.IOException;
+import java.util.Objects;
+
+public class FirstMenuController {
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
+
+    public void switchToSignUp(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Client.class.getResource("signup.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
