@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="604.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignupController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="604.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignupController">
    <children>
-      <Button layoutX="14.0" layoutY="577.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="back" />
+      <Button layoutX="15.0" layoutY="635.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="back" />
       <Line endX="100.0" layoutX="418.0" layoutY="114.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <TextField fx:id="nameTextField" layoutX="88.0" layoutY="86.0" prefHeight="26.0" prefWidth="431.0" promptText="First Name" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="175.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
@@ -31,7 +31,7 @@
          </image>
       </ImageView>
       <TextField fx:id="phoneOrEmail" layoutX="87.0" layoutY="205.0" prefHeight="26.0" prefWidth="431.0" promptText="Phone number or email address" style="-fx-background-color: #fefefe;" />
-      <Button fx:id="nextButton" layoutX="535.0" layoutY="576.0" mnemonicParsing="false" onAction="#signUp" prefHeight="26.0" prefWidth="54.0" text="next" />
+      <Button fx:id="nextButton" layoutX="535.0" layoutY="634.0" mnemonicParsing="false" onAction="#signUp" prefHeight="26.0" prefWidth="54.0" text="next" />
       <TextField fx:id="username" layoutX="86.0" layoutY="268.0" prefHeight="26.0" prefWidth="431.0" promptText="Username" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="297.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Line endX="100.0" layoutX="418.0" layoutY="358.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" AnchorPane.topAnchor="357.292877972126" />
@@ -44,5 +44,6 @@
       <Line endX="100.0" layoutX="418.0" layoutY="541.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Label layoutX="93.0" layoutY="455.0" text="Country" textFill="#aea4a4" />
       <Label layoutX="93.0" layoutY="516.0" text="Date of birth" textFill="#aea4a4" />
+      <Label fx:id="error" layoutX="93.0" layoutY="562.0" prefHeight="18.0" prefWidth="86.0" style="-fx-background-color: black;" textFill="#df1b1b" />
    </children>
 </AnchorPane>
