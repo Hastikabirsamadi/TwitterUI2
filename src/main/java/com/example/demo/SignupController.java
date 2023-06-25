@@ -77,11 +77,7 @@ public class SignupController implements Initializable {
         catch (IllegalArgumentException e){
             error.setText(e.getMessage());
         }
-        catch (ParseException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
+        catch (ParseException | InterruptedException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         Parent root = FXMLLoader.load(Client.class.getResource("signup2.fxml"));
