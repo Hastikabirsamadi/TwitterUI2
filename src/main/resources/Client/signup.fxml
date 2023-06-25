@@ -39,11 +39,11 @@
       <Line endX="100.0" layoutX="418.0" layoutY="480.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <ChoiceBox fx:id="country" layoutX="360.0" layoutY="451.0" prefWidth="150.0" />
       <DatePicker fx:id="birthdate" layoutX="339.0" layoutY="512.0" />
-      <TextField fx:id="passRepitition" layoutX="86.0" layoutY="389.0" prefHeight="26.0" prefWidth="431.0" promptText="Repeat your password" style="-fx-background-color: #fefefe;" />
+      <TextField fx:id="passRepetition" layoutX="86.0" layoutY="389.0" prefHeight="26.0" prefWidth="431.0" promptText="Repeat your password" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="419.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Line endX="100.0" layoutX="418.0" layoutY="541.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Label layoutX="93.0" layoutY="455.0" text="Country" textFill="#aea4a4" />
       <Label layoutX="93.0" layoutY="516.0" text="Date of birth" textFill="#aea4a4" />
-      <Label fx:id="error" layoutX="93.0" layoutY="562.0" prefHeight="18.0" prefWidth="86.0" style="-fx-background-color: black;" textFill="#df1b1b" />
+      <Label fx:id="error" layoutX="93.0" layoutY="562.0" prefHeight="18.0" prefWidth="431.0" style="-fx-background-color: #fefefe;" textFill="#df1b1b" />
    </children>
 </AnchorPane>
