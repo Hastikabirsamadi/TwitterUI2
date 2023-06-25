@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignupController">
+   <children>
+      <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="185.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="281.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sign up" />
+      <Button layoutX="470.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="exit" />
+   </children>
+</AnchorPane>
