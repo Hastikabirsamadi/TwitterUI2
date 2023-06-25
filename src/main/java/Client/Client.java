@@ -47,7 +47,7 @@ public class Client extends Application {
             stage.setScene(scene);
             stage.show();
 
-            client = new Socket("localhost", 9999);
+            client = new Socket("192.168.62.72", 9999);
             out = new ObjectOutputStream(client.getOutputStream());
             in = new ObjectInputStream(client.getInputStream());
 
@@ -55,9 +55,11 @@ public class Client extends Application {
             e.printStackTrace();
         }
     }
-    public static boolean signUp(String name, String lastName, String emailOrNumber , String userName, String pass,
+    public static String signUp(String name, String lastName, String emailOrNumber , String userName, String pass,
                                  String passRepetition,String country, LocalDate birthDate)
-            throws ParseException, IOException, InterruptedException, ClassNotFoundException, IllegalArgumentException {
+            throws ParseException, IOException, InterruptedException, ClassNotFoundException {
+        String temp = " ";
+            try {
                 String phone = null, email = null;
                 if (ClientManager.checkEmailFormat(emailOrNumber)) {
                     email = emailOrNumber;
@@ -80,12 +82,15 @@ public class Client extends Application {
                 Thread.sleep(500);
                 out.writeObject(user);
                 Thread.sleep(500);
-                String temp = (String) in.readObject();
+                temp = (String) in.readObject();
                 if (temp.equals("signed up successfully!")) {
                     isSignUP = true;
-                    return true;
                 }
-        return false;
+            }
+            catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
+            }
+        return temp;
     }
     public static void main(String[] args) {
         launch(args);

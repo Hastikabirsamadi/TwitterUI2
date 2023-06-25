@@ -51,7 +51,7 @@ public class SignupController implements Initializable {
     private Stage stage;
     private Scene scene;
     private boolean hasError = true;
-    private TextField textField;
+
 
     public void switchToMainMenu(ActionEvent event) throws IOException { // exit button
         root = FXMLLoader.load(Client.class.getResource("FirstPage.fxml"));
@@ -59,11 +59,10 @@ public class SignupController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        textField.setVisible(true);
     }
 
     public void signUp(ActionEvent event) throws IOException {
-
+        String feedback = " ";
         String firstname = nameTextField.getText();
         String lastname = lastNameTextField.getText();
         String numberOrEmail = phoneOrEmail.getText();
@@ -73,7 +72,7 @@ public class SignupController implements Initializable {
         String country2 = country.getValue();
         LocalDate birthday = birthdate.getValue();
         try {
-            Client.signUp(firstname, lastname, numberOrEmail, user, password, passRep, country2, birthday);
+            feedback = Client.signUp(firstname, lastname, numberOrEmail, user, password, passRep, country2, birthday);
         }
         catch (IllegalArgumentException e){
             hasError = false;
@@ -81,6 +80,12 @@ public class SignupController implements Initializable {
         }
         catch (ParseException | InterruptedException | ClassNotFoundException e) {
             throw new RuntimeException(e);
+        }
+        if (hasError) {
+            if (!feedback.equals("signed up successfully!")) {
+                error.setText(feedback);
+                hasError = false;
+            }
         }
         if(hasError) {
             Parent root = FXMLLoader.load(Client.class.getResource("signup2.fxml"));
