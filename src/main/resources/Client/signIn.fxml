@@ -16,13 +16,13 @@
       </Label>
       <Line endX="216.79998779296875" endY="-1.52587890625E-5" layoutX="293.0" layoutY="143.0" startX="-203.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Line endX="216.79998779296875" endY="-1.52587890625E-5" layoutX="293.0" layoutY="235.0" startX="-203.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
-      <TextField layoutX="93.0" layoutY="116.0" prefHeight="26.0" prefWidth="413.0" promptText="Username" style="-fx-background-color: #fefefefe;" />
-      <TextField layoutX="96.0" layoutY="207.0" prefHeight="26.0" prefWidth="413.0" promptText="Password" style="-fx-background-color: #fefefefe;" />
+      <TextField fx:id="username" layoutX="93.0" layoutY="116.0" prefHeight="26.0" prefWidth="413.0" promptText="Username" style="-fx-background-color: #fefefefe;" />
+      <TextField fx:id="password" layoutX="96.0" layoutY="207.0" prefHeight="26.0" prefWidth="413.0" promptText="Password" style="-fx-background-color: #fefefefe;" />
       <Button layoutX="14.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-color: #fefefe; -fx-border-radius: 50; -fx-border-color: gray; -fx-background-radius: 50;" text="back">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="526.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-background-radius: 50;" text="Sign in" textFill="#fefefe" />
+      <Button fx:id="signInButton" layoutX="526.0" layoutY="312.0" mnemonicParsing="false" style="-fx-background-color: black; -fx-background-radius: 50;" text="Sign in" textFill="#fefefe" />
    </children>
 </AnchorPane>

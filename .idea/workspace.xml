@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="sign up add &quot;fill all the fields&quot; exception">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="sign in ui">
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687775098159</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sign in ui">
+      <created>1687777812120</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687777812120</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +146,7 @@
     <MESSAGE value="SignupController" />
     <MESSAGE value="Edited SignupController class" />
     <MESSAGE value="sign up add &quot;fill all the fields&quot; exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="sign up add &quot;fill all the fields&quot; exception" />
+    <MESSAGE value="sign in ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="sign in ui" />
   </component>
 </project>
