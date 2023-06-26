@@ -13,6 +13,6 @@
          </font>
       </Button>
       <Text fill="WHITE" fontSmoothingType="LCD" layoutX="196.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="already have an account ? " />
-      <Button layoutX="336.0" layoutY="242.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Log in" textFill="#1187c7" />
+      <Button layoutX="336.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToSignIn" style="-fx-background-color: black;" text="Log in" textFill="#1187c7" />
    </children>
 </AnchorPane>
