@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="sign in ui">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="edited sign in scene2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687777812120</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edited sign in scene">
+      <created>1687778413652</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687778413652</updated>
+    </task>
+    <task id="LOCAL-00006" summary="edited sign in scene2">
+      <created>1687778619115</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687778619115</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +159,8 @@
     <MESSAGE value="Edited SignupController class" />
     <MESSAGE value="sign up add &quot;fill all the fields&quot; exception" />
     <MESSAGE value="sign in ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="sign in ui" />
+    <MESSAGE value="edited sign in scene" />
+    <MESSAGE value="edited sign in scene2" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited sign in scene2" />
   </component>
 </project>
