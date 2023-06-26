@@ -47,7 +47,7 @@ public class Client extends Application {
             stage.setScene(scene);
             stage.show();
 
-            client = new Socket("192.168.62.72", 9999);
+            client = new Socket("localhost", 9999);
             out = new ObjectOutputStream(client.getOutputStream());
             in = new ObjectInputStream(client.getInputStream());
 
@@ -58,38 +58,41 @@ public class Client extends Application {
     public static String signUp(String name, String lastName, String emailOrNumber , String userName, String pass,
                                  String passRepetition,String country, LocalDate birthDate)
             throws ParseException, IOException, InterruptedException, ClassNotFoundException {
-        String temp = " ";
-            try {
-                String phone = null, email = null;
-                if (ClientManager.checkEmailFormat(emailOrNumber)) {
-                    email = emailOrNumber;
-                }
-                else if (ClientManager.checkPhoneNumberFormat(emailOrNumber)) {
-                    if (ClientManager.checkPhoneNumberLength(emailOrNumber))
-                        phone = emailOrNumber;
-                    else {
-                        throw new IllegalArgumentException("invalid format for phone number!");
-                    }
-                } else {
-                    throw new IllegalArgumentException("invalid format for phone number or email!");
-                }
-                if (!ClientManager.checkPasswordLength(pass) || !ClientManager.checkPasswordFormat(pass) ||
-                        !pass.equals(passRepetition) ) {
-                    throw new IllegalArgumentException("invalid pass!");
-                }
-                user = new User(userName, pass, name, lastName, email, phone, country, birthDate);
-                out.writeObject("1");
-                Thread.sleep(500);
-                out.writeObject(user);
-                Thread.sleep(500);
-                temp = (String) in.readObject();
-                if (temp.equals("signed up successfully!")) {
-                    isSignUP = true;
-                }
+        String temp;
+        String phone = null, email = null;
+        if(name.length() == 0 || lastName.length() == 0 || emailOrNumber.length() == 0 || userName.length() == 0 || pass.length() == 0 || passRepetition.length() == 0
+                || country.length() == 0 || birthDate.getDayOfWeek() == null) {
+            throw new IllegalArgumentException("Please fill in all the fields!");
+        }
+        if (ClientManager.checkEmailFormat(emailOrNumber)) {
+            email = emailOrNumber;
+        } else if (ClientManager.checkPhoneNumberFormat(emailOrNumber)) {
+            if (ClientManager.checkPhoneNumberLength(emailOrNumber))
+                phone = emailOrNumber;
+            else {
+                throw new IllegalArgumentException("invalid format for phone number!");
             }
-            catch (IllegalArgumentException e){
-                System.out.println(e.getMessage());
-            }
+        } else {
+            throw new IllegalArgumentException("invalid format for phone number or email!");
+        }
+        if (!ClientManager.checkPasswordLength(pass)) {
+            throw new IllegalArgumentException("password must be at least 8 characters!");
+        }
+        if (!ClientManager.checkPasswordFormat(pass)) {
+            throw new IllegalArgumentException("The format of the password is wrong!");
+        }
+        if (!pass.equals(passRepetition)) {
+            throw new IllegalArgumentException("Wrong repetition!");
+        }
+        user = new User(userName, pass, name, lastName, email, phone, country, birthDate);
+        out.writeObject("1");
+        Thread.sleep(500);
+        out.writeObject(user);
+        Thread.sleep(500);
+        temp = (String) in.readObject();
+        if (temp.equals("signed up successfully!")) {
+            isSignUP = true;
+        }
         return temp;
     }
     public static void main(String[] args) {

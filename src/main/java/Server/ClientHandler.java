@@ -37,6 +37,9 @@ public class ClientHandler implements Runnable {
     @Override
     public void run() {
 
+        for(User user2 : ServerManager.getUsers().values()) {
+            System.out.println(user2.getUsername() + "  " + user2.getPhoneNumber());
+        }
         String userChoice;
         outer : while (true) {
             while (true) {

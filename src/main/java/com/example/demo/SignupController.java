@@ -54,23 +54,32 @@ public class SignupController implements Initializable {
 
 
     public void switchToMainMenu(ActionEvent event) throws IOException { // exit button
-        root = FXMLLoader.load(Client.class.getResource("FirstPage.fxml"));
+        root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("FirstPage.fxml")));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setScene(scene);
+
+        stage.setResizable(true);
         stage.show();
     }
 
     public void signUp(ActionEvent event) throws IOException {
+        String firstname;
+        String lastname;
+        String numberOrEmail;
+        String user;
+        String password;
+        String passRep;
+        String country2;
+        LocalDate birthday;
         String feedback = " ";
-        String firstname = nameTextField.getText();
-        String lastname = lastNameTextField.getText();
-        String numberOrEmail = phoneOrEmail.getText();
-        String user = username.getText();
-        String password = pass.getText();
-        String passRep = passRepetition.getText();
-        String country2 = country.getValue();
-        LocalDate birthday = birthdate.getValue();
+        firstname = nameTextField.getText();
+        lastname = lastNameTextField.getText();
+        numberOrEmail = phoneOrEmail.getText();
+        user = username.getText();
+        password = pass.getText();
+        passRep = passRepetition.getText();
+        country2 = country.getValue();
+        birthday = birthdate.getValue();
         try {
             feedback = Client.signUp(firstname, lastname, numberOrEmail, user, password, passRep, country2, birthday);
         }
@@ -88,7 +97,7 @@ public class SignupController implements Initializable {
             }
         }
         if(hasError) {
-            Parent root = FXMLLoader.load(Client.class.getResource("signup2.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("signIn.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
