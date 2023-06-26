@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="Edited SignupController class">
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="sign up add &quot;fill all the fields&quot; exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/FirstMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/FirstMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Signup2Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signup2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +116,14 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۰۲" />
       <updated>1687707983222</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sign up add &quot;fill all the fields&quot; exception">
+      <created>1687775098159</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687775098159</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +140,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SignupController" />
     <MESSAGE value="Edited SignupController class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited SignupController class" />
+    <MESSAGE value="sign up add &quot;fill all the fields&quot; exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="sign up add &quot;fill all the fields&quot; exception" />
   </component>
 </project>

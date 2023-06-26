@@ -14,7 +14,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="604.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignupController">
    <children>
-      <Button layoutX="15.0" layoutY="635.0" mnemonicParsing="false" onAction="#switchToMainMenu" text="back" />
+      <Button layoutX="14.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="26.0" prefWidth="68.0" style="-fx-border-color: gray; -fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #fefefe;" text="back" textFill="#1e0202">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Line endX="100.0" layoutX="418.0" layoutY="114.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <TextField fx:id="nameTextField" layoutX="88.0" layoutY="86.0" prefHeight="26.0" prefWidth="431.0" promptText="First Name" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="175.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
@@ -31,14 +34,14 @@
          </image>
       </ImageView>
       <TextField fx:id="phoneOrEmail" layoutX="87.0" layoutY="205.0" prefHeight="26.0" prefWidth="431.0" promptText="Phone number or email address" style="-fx-background-color: #fefefe;" />
-      <Button fx:id="nextButton" layoutX="535.0" layoutY="634.0" mnemonicParsing="false" onAction="#signUp" prefHeight="26.0" prefWidth="54.0" text="next" />
+      <Button fx:id="nextButton" layoutX="521.0" layoutY="634.0" mnemonicParsing="false" onAction="#signUp" prefHeight="26.0" prefWidth="68.0" style="-fx-background-radius: 50; -fx-background-color: black;" text="Signup" textFill="#fefefe" />
       <TextField fx:id="username" layoutX="86.0" layoutY="268.0" prefHeight="26.0" prefWidth="431.0" promptText="Username" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="297.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Line endX="100.0" layoutX="418.0" layoutY="358.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" AnchorPane.topAnchor="357.292877972126" />
       <TextField fx:id="pass" layoutX="86.0" layoutY="328.0" prefHeight="26.0" prefWidth="431.0" promptText="Password" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="480.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
-      <ChoiceBox fx:id="country" layoutX="360.0" layoutY="451.0" prefWidth="150.0" />
-      <DatePicker fx:id="birthdate" layoutX="339.0" layoutY="512.0" />
+      <ChoiceBox fx:id="country" layoutX="144.0" layoutY="450.0" prefHeight="26.0" prefWidth="370.0" style="-fx-background-color: #fefefe;" />
+      <DatePicker fx:id="birthdate" layoutX="298.0" layoutY="512.0" opacity="0.4" prefHeight="26.0" prefWidth="216.0" />
       <TextField fx:id="passRepetition" layoutX="86.0" layoutY="389.0" prefHeight="26.0" prefWidth="431.0" promptText="Repeat your password" style="-fx-background-color: #fefefe;" />
       <Line endX="100.0" layoutX="418.0" layoutY="419.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Line endX="100.0" layoutX="418.0" layoutY="541.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
