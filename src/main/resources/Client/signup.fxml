@@ -14,14 +14,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="604.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignupController">
    <children>
-      <Button layoutX="14.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="26.0" prefWidth="68.0" style="-fx-border-color: gray; -fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #fefefe;" text="back" textFill="#1e0202">
+      <Button fx:id="back" layoutX="14.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="26.0" prefWidth="68.0" style="-fx-border-color: gray; -fx-border-radius: 50; -fx-background-radius: 50; -fx-background-color: #fefefe;" text="back" textFill="#1e0202">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
       <Line endX="100.0" layoutX="418.0" layoutY="114.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <TextField fx:id="nameTextField" layoutX="88.0" layoutY="86.0" prefHeight="26.0" prefWidth="431.0" promptText="First Name" style="-fx-background-color: #fefefe;" />
-      <Line endX="100.0" layoutX="418.0" layoutY="175.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <TextField fx:id="lastNameTextField" layoutX="88.0" layoutY="147.0" prefHeight="26.0" prefWidth="431.0" promptText="Last Name" style="-fx-background-color: #fefefe;" />
+      <Line endX="100.0" layoutX="418.0" layoutY="175.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Line endX="100.0" layoutX="418.0" layoutY="236.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
       <Text layoutX="181.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create your account">
          <font>

@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,22 +26,39 @@ public class SignInController {
     private TextField password;
     @FXML
     private Label error;
+    @FXML
+    Button back;
     private Stage stage;
     private Scene scene;
     private boolean hasError = false;
 
-    public void switchToMainMenu(ActionEvent event) throws IOException { // exit button
-        root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("FirstPage.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setResizable(true);
+
+
+    public void switchToMainMenu(ActionEvent event) { // exit button
+        Button button = (Button) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("FirstPage.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene = null;
+        if (root != null) {
+            scene = new Scene(root);
+        }
+        stage.setScene(scene);
         stage.show();
     }
+
+
 
     public void signIn(ActionEvent event) throws IOException {
         String user, pass, feedback = " ";
         user = username.getText();
         pass = password.getText();
+        hasError = false;
         try {
             feedback = Client.signIn(user,pass);
         }
@@ -55,7 +73,7 @@ public class SignInController {
             if (!feedback.equals("signed in successfully!")){
                 error.setText(feedback);
             }
-            Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("?")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

@@ -11,10 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,6 +32,9 @@ public class SignupController implements Initializable {
     TextField phoneOrEmail;
 
     @FXML
+    Button back;
+
+    @FXML
     TextField username;
     @FXML
     TextField pass;
@@ -53,12 +53,21 @@ public class SignupController implements Initializable {
     private boolean hasError = false;
 
 
-    public void switchToMainMenu(ActionEvent event) throws IOException { // exit button
-        root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("FirstPage.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-
-        stage.setResizable(true);
+    public void switchToMainMenu(ActionEvent event) { // exit button
+        Button button = (Button) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("FirstPage.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene = null;
+        if (root != null) {
+            scene = new Scene(root);
+        }
+        stage.setScene(scene);
         stage.show();
     }
 
@@ -80,16 +89,17 @@ public class SignupController implements Initializable {
         passRep = passRepetition.getText();
         country2 = country.getValue();
         birthday = birthdate.getValue();
-        try {
-            feedback = Client.signUp(firstname, lastname, numberOrEmail, user, password, passRep, country2, birthday);
-        }
-        catch (IllegalArgumentException e){
-            hasError = true;
-            error.setText(e.getMessage());
-        }
-        catch (ParseException | InterruptedException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        hasError = false;
+            try {
+                feedback = Client.signUp(firstname, lastname, numberOrEmail, user, password, passRep, country2, birthday);
+            }
+            catch (IllegalArgumentException e){
+                hasError = true;
+                error.setText(e.getMessage());
+            }
+            catch (ParseException | InterruptedException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
         if (!hasError) {
             if (!feedback.equals("signed up successfully!")) {
                 error.setText(feedback);

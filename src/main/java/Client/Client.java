@@ -86,9 +86,9 @@ public class Client extends Application {
         }
         user = new User(userName, pass, name, lastName, email, phone, country, birthDate);
         out.writeObject("1");
-        Thread.sleep(500);
+        //Thread.sleep(500);
         out.writeObject(user);
-        Thread.sleep(500);
+        //Thread.sleep(500);
         temp = (String) in.readObject();
         if (temp.equals("signed up successfully!")) {
             isSignUP = true;

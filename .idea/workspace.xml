@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="Edited first page scene">
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="Edited first signIn scene">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/FirstMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/FirstMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SignupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/FirstPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/FirstPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/signup.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -133,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687782102754</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Edited first signIn scene">
+      <created>1687782335934</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687782335934</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +167,7 @@
     <MESSAGE value="Edited SignupController class" />
     <MESSAGE value="SignupController feedback" />
     <MESSAGE value="Edited first page scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited first page scene" />
+    <MESSAGE value="Edited first signIn scene" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited first signIn scene" />
   </component>
 </project>
