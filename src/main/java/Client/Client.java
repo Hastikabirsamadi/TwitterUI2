@@ -95,6 +95,31 @@ public class Client extends Application {
         }
         return temp;
     }
+
+    public static String signIn(String userName, String pass) throws ParseException {
+            if (userName.length() == 0 || pass.length() == 0){
+                throw new IllegalArgumentException("Please fill in all the fields!");
+            }
+            user = new User(userName, pass);
+            String temp = " ";
+            try {
+                out.writeObject("2");
+                out.writeObject(user);
+                Thread.sleep(500);
+                temp = (String) in.readObject();
+                if (temp.equals("signed in successfully!")){
+                    isSignIn = true;
+                }
+            }
+            catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            return temp;
+    }
+
+
     public static void main(String[] args) {
         launch(args);
     }

@@ -50,7 +50,7 @@ public class SignupController implements Initializable {
     private Label error;
     private Stage stage;
     private Scene scene;
-    private boolean hasError = true;
+    private boolean hasError = false;
 
 
     public void switchToMainMenu(ActionEvent event) throws IOException { // exit button
@@ -84,19 +84,16 @@ public class SignupController implements Initializable {
             feedback = Client.signUp(firstname, lastname, numberOrEmail, user, password, passRep, country2, birthday);
         }
         catch (IllegalArgumentException e){
-            hasError = false;
+            hasError = true;
             error.setText(e.getMessage());
         }
         catch (ParseException | InterruptedException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-        if (hasError) {
+        if (!hasError) {
             if (!feedback.equals("signed up successfully!")) {
                 error.setText(feedback);
-                hasError = false;
             }
-        }
-        if(hasError) {
             Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("signIn.fxml")));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

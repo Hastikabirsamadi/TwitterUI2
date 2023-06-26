@@ -27,4 +27,12 @@ public class FirstMenuController {
         stage.setResizable(true);
         stage.show();
     }
+    public void switchToSignIn(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Client.class.getResource("signIn.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(true);
+        stage.show();
+    }
 }
