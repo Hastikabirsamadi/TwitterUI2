@@ -152,18 +152,10 @@ public class ClientManager {
     public static void addTweet(ObjectOutputStream out, ObjectInputStream in) throws IOException, ClassNotFoundException, InterruptedException {
         System.out.println("Please enter your tweet:");
         System.out.println("write 'exit' to exit");
-        System.out.println("write 'finish' to finish the tweet:");
-        StringBuilder body;
+        Scanner scanner = new Scanner(System.in);
+        String body;
         while (true) {
-            body = new StringBuilder();
-            String temp = " ";
-            while (!temp.equals("finish")) {
-                temp = input.nextLine();
-                if (!temp.equals("finish")) {
-                    body.append(temp);
-                    body.append('\n');
-                }
-            }
+            body = scanner.nextLine();
             if (body.length() > 280) {
                 System.out.println("Your tweet has more than 280 characters!!!");
                 System.out.println("Try again!");
@@ -171,7 +163,7 @@ public class ClientManager {
             }
             break;
         }
-        if (body.toString().equals("exit\n")){
+        if (body.equals("exit")){
             out.writeObject("exit");
             return;
         }
