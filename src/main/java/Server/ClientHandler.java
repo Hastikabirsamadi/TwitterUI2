@@ -181,8 +181,8 @@ public class ClientHandler implements Runnable {
                     else if(userChoice.equals("3")) {
                         System.out.println("showing timeline for " + user.getUsername());
                         out.writeObject(user.timeline());
-                        String ans = (String) in.readObject();
-                        if(ans.equals("ok")) {
+                     //   String ans = (String) in.readObject();
+//                        if(ans.equals("ok")) {
                             Tweet tempTweet = (Tweet) in.readObject();
                             out.writeObject(ServerManager.getUsers().get(tempTweet.getAuthor().getUsername()));
                             String searchChoice = (String) in.readObject();
@@ -227,7 +227,7 @@ public class ClientHandler implements Runnable {
 //                                        ServerManager.readFile();
                                 }
                             }
-                        }
+                       // }
                     }
                     else if(userChoice.equals("4")) {
                         System.out.println("user is adding a tweet...");

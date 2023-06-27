@@ -6,39 +6,54 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="251.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TweetController">
    <children>
-      <HBox layoutX="194.0" layoutY="122.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox fx:id="tweetBox" layoutX="194.0" layoutY="122.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="251.0" prefWidth="442.0" style="-fx-background-color: #fefefe;">
                <children>
-                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 100;" text="profile" />
-                  <Label layoutX="78.0" layoutY="23.0" text="name" />
-                  <Label layoutX="126.0" layoutY="23.0" text="username" />
-                  <Label layoutX="194.0" layoutY="22.0" text="passed time" />
-                  <Label alignment="CENTER" layoutX="53.0" layoutY="83.0" prefHeight="106.0" prefWidth="227.0" text="body" />
-                  <ImageView fitHeight="36.0" fitWidth="52.0" layoutX="331.0" layoutY="198.0">
+                  <Button fx:id="profile" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 100;" text="profile" textFill="#3b3838" />
+                  <Label fx:id="name" layoutX="78.0" layoutY="23.0" text="name" />
+                  <Label fx:id="username" layoutX="126.0" layoutY="23.0" text="username" textFill="#a1a6a2" />
+                  <Label fx:id="passedTime" layoutX="194.0" layoutY="22.0" text="passed time" textFill="#a1a6a2" />
+                  <Label fx:id="body" alignment="CENTER" layoutX="53.0" layoutY="83.0" prefHeight="106.0" prefWidth="334.0" text="body" />
+                  <ImageView fx:id="like" fitHeight="36.0" fitWidth="52.0" layoutX="331.0" layoutY="198.0">
                      <image>
                         <Image url="@../like.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="31.0" layoutY="194.0">
+                  <ImageView fx:id="comment" fitHeight="43.0" fitWidth="43.0" layoutX="31.0" layoutY="194.0">
                      <image>
                         <Image url="@../comment.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="126.0" layoutY="194.0">
+                  <ImageView fx:id="retweet" fitHeight="43.0" fitWidth="43.0" layoutX="126.0" layoutY="194.0">
                      <image>
                         <Image url="@../retweet.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="230.0" layoutY="198.0">
+                  <ImageView fx:id="qoute" fitHeight="36.0" fitWidth="37.0" layoutX="244.0" layoutY="198.0">
                      <image>
                         <Image url="@../qoute.jpg" />
                      </image>
                   </ImageView>
+                  <Label fx:id="commentCount" layoutX="64.0" layoutY="208.0" text="Label">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="retweetCount" layoutX="164.0" layoutY="208.0" text="Label">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="likeCount" layoutX="368.0" layoutY="207.0" text="Label">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
