@@ -32,6 +32,8 @@ public class User implements Serializable {
     private ArrayList<User> followers = new ArrayList<>();
     private ArrayList<User> followings = new ArrayList<>();
     private ArrayList<User> blackList = new ArrayList<>();
+    private ArrayList<Tweet> likedTweets = new ArrayList<>();
+    private ArrayList<Tweet> retweetTweets = new ArrayList<>();
 
     public User(String username, String password, String firstName, String lastName, String email, String phoneNumber,
                 String country, LocalDate birthDate) throws ParseException {
