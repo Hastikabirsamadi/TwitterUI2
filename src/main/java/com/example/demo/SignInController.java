@@ -75,6 +75,7 @@ public class SignInController {
             }
             MainPageController mainPageController = new MainPageController();
             mainPageController.switchToMainPage(event);
+
         }
     }
 }

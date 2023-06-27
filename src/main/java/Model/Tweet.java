@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Tweet implements Serializable {
-    private User author;
+    private String author;
     private String body;
     private int likes;
     private int retweets;
@@ -23,7 +23,7 @@ public class Tweet implements Serializable {
         return body;
     }
 
-    public Tweet(String body, int likes, int retweets, int comments, User author) {
+    public Tweet(String body, int likes, int retweets, int comments, String author) {
         this.author = author;
         this.body = body;
         this.likes = likes;
@@ -69,7 +69,7 @@ public class Tweet implements Serializable {
         return currentTime;
     }
 
-    public User getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
@@ -89,7 +89,7 @@ public class Tweet implements Serializable {
         this.retweetUsers = retweetUsers;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -109,7 +109,7 @@ public class Tweet implements Serializable {
             this.currentTime = (LocalDate.now().getDayOfMonth()) + " " + (LocalDate.now().getMonth());
         }
         return "*********************************" + "\n" +
-                author.getUsername()+
+                author+
                 "\n"+
                 body +
                 "\nlikes : "+likes +

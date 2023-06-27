@@ -149,26 +149,12 @@ public class ClientManager {
         System.out.println(res);
     }
 
-    public static void addTweet(ObjectOutputStream out, ObjectInputStream in) throws IOException, ClassNotFoundException, InterruptedException {
-        System.out.println("Please enter your tweet:");
-        System.out.println("write 'exit' to exit");
-        Scanner scanner = new Scanner(System.in);
-        String body;
-        while (true) {
-            body = scanner.nextLine();
-            if (body.length() > 280) {
-                System.out.println("Your tweet has more than 280 characters!!!");
-                System.out.println("Try again!");
-                continue;
+    public static void addTweet(ObjectOutputStream out, ObjectInputStream in, String body, String author) throws IOException, ClassNotFoundException, InterruptedException {
+            out.writeObject("5");
+        if (body.length() > 280) {
+                throw new IllegalArgumentException("Your tweet has more than 280 characters!!!");
             }
-            break;
-        }
-        if (body.equals("exit")){
-            out.writeObject("exit");
-            return;
-        }
-        out.writeObject("ok");
-        Tweet tweet = new Tweet(body, 0,0,0, null);
+        Tweet tweet = new Tweet(body, 0,0,0, author);
         out.writeObject(tweet);
         Thread.sleep(300);
         String res = (String) in.readObject();

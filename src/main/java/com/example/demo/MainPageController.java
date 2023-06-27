@@ -8,8 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -49,6 +51,24 @@ public class MainPageController {
         scene = new Scene(root);
         stage.setScene(scene);
         this.showTimeline(Client.timelineReceiver());
+        stage.show();
+    }
+
+    public void switchToAddTweet(MouseEvent event) {
+        ImageView imageView = (ImageView) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("addTweet.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) imageView.getScene().getWindow();
+        Scene scene = null;
+        if (root != null) {
+            scene = new Scene(root);
+        }
+        stage.setScene(scene);
         stage.show();
     }
 }

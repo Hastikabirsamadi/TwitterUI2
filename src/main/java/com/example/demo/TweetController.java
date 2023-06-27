@@ -1,11 +1,15 @@
 package com.example.demo;
 
+
+import Client.Client;
 import Model.Tweet;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,8 +19,12 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import Client.*;
 
 public class TweetController {
     @FXML
@@ -46,12 +54,15 @@ public class TweetController {
     @FXML
     private HBox tweetBox;
     private Tweet tweet;
-
+    @FXML
+    private TextField tweetTextField;
+    @FXML
+    private Label error;
     public HBox showTweet(Tweet serverTweet){
         tweet = serverTweet;
-        name.setText(tweet.getAuthor().getFirstName());
-        tweetBox.getChildren().add(name);
-        username.setText(tweet.getAuthor().getUsername());
+//        name.setText(tweet.getAuthor().getFirstName());
+//        tweetBox.getChildren().add(name);
+        username.setText(tweet.getAuthor());
         tweetBox.getChildren().add(username);
         passedTime.setText(tweet.calculateTime());
         tweetBox.getChildren().add(passedTime);
@@ -68,6 +79,16 @@ public class TweetController {
         tweetBox.getChildren().add(retweet);
         tweetBox.getChildren().add(quote);
         return tweetBox;
+    }
+
+    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) throws IOException, ClassNotFoundException, InterruptedException {
+        String body = tweetTextField.getText();
+        try {
+            ClientManager.addTweet(out, in, body, author);
+        }
+        catch (IllegalArgumentException e){
+            error.setText(e.getMessage());
+        }
     }
 
     public void like(MouseEvent event){
