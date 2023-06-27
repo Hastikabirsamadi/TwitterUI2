@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 import Model.*;
 import Server.ServerManager;
@@ -119,6 +120,9 @@ public class Client extends Application {
             return temp;
     }
 
+    public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException {
+        return (ArrayList<Tweet>) in.readObject();
+    }
 
     public static void main(String[] args) {
         launch(args);

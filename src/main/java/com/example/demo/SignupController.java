@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import Client.Client;
+import Model.Tweet;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,9 +15,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URL;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -68,7 +71,7 @@ public class SignupController implements Initializable {
         stage.show();
     }
 
-    public void signUp(ActionEvent event) throws IOException {
+    public void signUp(ActionEvent event) throws IOException, ClassNotFoundException {
         String firstname;
         String lastname;
         String numberOrEmail;
@@ -101,13 +104,9 @@ public class SignupController implements Initializable {
             if (!feedback.equals("signed up successfully!")) {
                 error.setText(feedback);
             }
-            Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-            System.out.println(firstname + "  " + lastname + "  ");
         }
+        MainPageController mainPageController = new MainPageController();
+        mainPageController.switchToMainPage(event);
     }
         ObservableList<String> temp = FXCollections.observableArrayList("Afghanistan","Albania","Algeria","Andorra",
                 "Angola","Antigua & Deps","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain",

@@ -54,7 +54,7 @@ public class SignInController {
 
 
 
-    public void signIn(ActionEvent event) throws IOException {
+    public void signIn(ActionEvent event) throws IOException, ClassNotFoundException {
         String user, pass, feedback = " ";
         user = username.getText();
         pass = password.getText();
@@ -73,12 +73,8 @@ public class SignInController {
             if (!feedback.equals("signed in successfully!")){
                 error.setText(feedback);
             }
-            Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-            System.out.println(user + "  " + pass + "  ");
+            MainPageController mainPageController = new MainPageController();
+            mainPageController.switchToMainPage(event);
         }
     }
 }
