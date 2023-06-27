@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="add MainPage controller">
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="timeline v.01&#10;ClientHandler edited">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Quote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Retweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Retweet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687887857139</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="timeline v.01&#10;ClientHandler edited">
+      <created>1687890490452</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687890490452</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,6 +251,7 @@
     <MESSAGE value="main page design" />
     <MESSAGE value="main page design2" />
     <MESSAGE value="add MainPage controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="add MainPage controller" />
+    <MESSAGE value="timeline v.01&#10;ClientHandler edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="timeline v.01&#10;ClientHandler edited" />
   </component>
 </project>

@@ -63,6 +63,11 @@ public class ClientHandler implements Runnable {
                             out.writeObject("signed up successfully!");
                             System.out.println("showing timeline for " + user.getUsername());
                             out.writeObject(user.timeline());
+                            String secondChoice = (String)in.readObject();
+                            if(secondChoice.equals("5")) {
+                                System.out.println(user.getUsername() + " is adding a tweet...");
+
+                            }
                             ServerManager.writeFile(ServerManager.getUsers());
                             ServerManager.writeTweetFile(ServerManager.getTweets());
                             break;
@@ -196,7 +201,7 @@ public class ClientHandler implements Runnable {
                      //   String ans = (String) in.readObject();
 //                        if(ans.equals("ok")) {
                             Tweet tempTweet = (Tweet) in.readObject();
-                            out.writeObject(ServerManager.getUsers().get(tempTweet.getAuthor().getUsername()));
+                            out.writeObject(ServerManager.getUsers().get(tempTweet.getAuthor()));
                             String searchChoice = (String) in.readObject();
                             if (searchChoice.equals("1")) { //follow
                                 User temp = (User) in.readObject();
@@ -246,7 +251,7 @@ public class ClientHandler implements Runnable {
                         String ifExit = (String) in.readObject();
                         if(ifExit.equals("ok")) {
                             Tweet tweet = (Tweet) in.readObject();
-                            tweet.setAuthor(user);
+                            tweet.setAuthor(user.getUsername());
                             user.tweet(tweet);
                             System.out.println("user '" + user.getUsername() + "' added tweet successfully");
                             out.writeObject("tweet added successfully!");
