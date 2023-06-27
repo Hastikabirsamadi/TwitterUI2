@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="main page design" />
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="main page design2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687887230764</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="main page design2">
+      <created>1687887419701</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687887419701</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +228,7 @@
     <MESSAGE value="tweet fxml completed" />
     <MESSAGE value="show tweet method added" />
     <MESSAGE value="main page design" />
-    <option name="LAST_COMMIT_MESSAGE" value="main page design" />
+    <MESSAGE value="main page design2" />
+    <option name="LAST_COMMIT_MESSAGE" value="main page design2" />
   </component>
 </project>
