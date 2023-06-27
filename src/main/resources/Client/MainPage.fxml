@@ -1,113 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ScrollPane layoutY="8.0" prefHeight="393.0" prefWidth="600.0">
          <content>
-            <VBox prefHeight="734.0" prefWidth="583.0" spacing="1.0">
-               <children>
-                  <HBox prefHeight="121.0" prefWidth="600.0" style="-fx-border-color: gray;">
-                     <children>
-                        <AnchorPane prefHeight="122.0" prefWidth="598.0" style="-fx-background-color: #fefefe;">
-                           <children>
-                              <Label layoutX="58.0" layoutY="13.0" style="-fx-background-color: white;" text="Name" />
-                              <Label layoutX="101.0" layoutY="13.0" style="-fx-background-color: white;" text="username" textFill="#817579" />
-                              <Label layoutX="161.0" layoutY="13.0" style="-fx-background-color: white;" text="passed time" textFill="#817579" />
-                              <Label alignment="CENTER" layoutX="90.0" layoutY="41.0" prefHeight="37.0" prefWidth="451.0" style="-fx-background-color: white;" text="body" />
-                              <Button layoutX="82.0" layoutY="86.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="38.0" />
-                              <Button layoutX="189.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="comment" />
-                              <Button layoutX="333.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="retweet" />
-                              <Button layoutX="469.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="qoute" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="121.0" prefWidth="600.0" style="-fx-border-color: gray;">
-                     <children>
-                        <AnchorPane prefHeight="122.0" prefWidth="598.0" style="-fx-background-color: #fefefe;">
-                           <children>
-                              <Label layoutX="58.0" layoutY="13.0" style="-fx-background-color: white;" text="Name" />
-                              <Label layoutX="101.0" layoutY="13.0" style="-fx-background-color: white;" text="username" textFill="#817579" />
-                              <Label layoutX="161.0" layoutY="13.0" style="-fx-background-color: white;" text="passed time" textFill="#817579" />
-                              <Label alignment="CENTER" layoutX="90.0" layoutY="41.0" prefHeight="37.0" prefWidth="451.0" style="-fx-background-color: white;" text="body" />
-                              <Button layoutX="82.0" layoutY="86.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="38.0" text="like" />
-                              <Button layoutX="189.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="comment" />
-                              <Button layoutX="333.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="retweet" />
-                              <Button layoutX="469.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="qoute" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="121.0" prefWidth="600.0" style="-fx-border-color: gray;">
-                     <children>
-                        <AnchorPane prefHeight="122.0" prefWidth="598.0" style="-fx-background-color: #fefefe;">
-                           <children>
-                              <Label layoutX="58.0" layoutY="13.0" style="-fx-background-color: white;" text="Name" />
-                              <Label layoutX="101.0" layoutY="13.0" style="-fx-background-color: white;" text="username" textFill="#817579" />
-                              <Label layoutX="161.0" layoutY="13.0" style="-fx-background-color: white;" text="passed time" textFill="#817579" />
-                              <Label alignment="CENTER" layoutX="90.0" layoutY="41.0" prefHeight="37.0" prefWidth="451.0" style="-fx-background-color: white;" text="body" />
-                              <Button layoutX="82.0" layoutY="86.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="38.0" />
-                              <Button layoutX="189.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="comment" />
-                              <Button layoutX="333.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="retweet" />
-                              <Button layoutX="469.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="qoute" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <AnchorPane prefHeight="122.0" prefWidth="598.0" style="-fx-background-color: #fefefe;">
-                     <children>
-                        <Label layoutX="58.0" layoutY="13.0" style="-fx-background-color: white;" text="Name" />
-                        <Label layoutX="101.0" layoutY="13.0" style="-fx-background-color: white;" text="username" textFill="#817579" />
-                        <Label layoutX="161.0" layoutY="13.0" style="-fx-background-color: white;" text="passed time" textFill="#817579" />
-                        <Label alignment="CENTER" layoutX="90.0" layoutY="41.0" prefHeight="37.0" prefWidth="451.0" style="-fx-background-color: white;" text="body" />
-                        <Button layoutX="82.0" layoutY="86.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="38.0" />
-                        <Button layoutX="189.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="comment" />
-                        <Button layoutX="333.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="retweet" />
-                        <Button layoutX="469.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="qoute" />
-                     </children>
-                  </AnchorPane>
-                  <HBox layoutX="10.0" layoutY="353.0" prefHeight="121.0" prefWidth="600.0" style="-fx-border-color: gray;">
-                     <children>
-                        <AnchorPane prefHeight="122.0" prefWidth="598.0" style="-fx-background-color: #fefefe;">
-                           <children>
-                              <Label layoutX="58.0" layoutY="13.0" style="-fx-background-color: white;" text="Name" />
-                              <Label layoutX="101.0" layoutY="13.0" style="-fx-background-color: white;" text="username" textFill="#817579" />
-                              <Label layoutX="161.0" layoutY="13.0" style="-fx-background-color: white;" text="passed time" textFill="#817579" />
-                              <Label alignment="CENTER" layoutX="90.0" layoutY="41.0" prefHeight="37.0" prefWidth="451.0" style="-fx-background-color: white;" text="body" />
-                              <Button layoutX="82.0" layoutY="86.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="38.0" />
-                              <Button layoutX="189.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="comment" />
-                              <Button layoutX="333.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="retweet" />
-                              <Button layoutX="469.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="qoute" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="468.0" prefHeight="121.0" prefWidth="600.0" style="-fx-border-color: gray;">
-                     <children>
-                        <AnchorPane prefHeight="122.0" prefWidth="598.0" style="-fx-background-color: #fefefe;">
-                           <children>
-                              <Label layoutX="58.0" layoutY="13.0" style="-fx-background-color: white;" text="Name" />
-                              <Label layoutX="101.0" layoutY="13.0" style="-fx-background-color: white;" text="username" textFill="#817579" />
-                              <Label layoutX="161.0" layoutY="13.0" style="-fx-background-color: white;" text="passed time" textFill="#817579" />
-                              <Label alignment="CENTER" layoutX="90.0" layoutY="41.0" prefHeight="37.0" prefWidth="451.0" style="-fx-background-color: white;" text="body" />
-                              <Button layoutX="82.0" layoutY="86.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="38.0" />
-                              <Button layoutX="189.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="comment" />
-                              <Button layoutX="333.0" layoutY="86.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="retweet" />
-                              <Button layoutX="469.0" layoutY="85.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="qoute" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
+            <VBox prefHeight="393.0" prefWidth="583.0" spacing="1.0" />
          </content>
       </ScrollPane>
       <Button layoutX="50.0" layoutY="413.0" mnemonicParsing="false" text="Button" />

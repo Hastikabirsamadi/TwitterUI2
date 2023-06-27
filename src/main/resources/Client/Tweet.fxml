@@ -34,7 +34,7 @@
                         <Image url="@../retweet.jpg" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="qoute" fitHeight="36.0" fitWidth="37.0" layoutX="244.0" layoutY="198.0">
+                  <ImageView fx:id="quote" fitHeight="36.0" fitWidth="37.0" layoutX="245.0" layoutY="198.0">
                      <image>
                         <Image url="@../qoute.jpg" />
                      </image>
