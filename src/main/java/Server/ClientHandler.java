@@ -52,6 +52,8 @@ public class ClientHandler implements Runnable {
                         break outer;
                     }
                     if (userChoice.equals("1")) {
+                        ServerManager.readFile();
+                        ServerManager.readTweetFile();
                         System.out.println("user is signing up...");
                         User tempUser = (User) in.readObject();
                         if (ServerManager.checkSignUp(tempUser, out)) {
@@ -59,10 +61,16 @@ public class ClientHandler implements Runnable {
                             user = tempUser;
                             System.out.println("user " + user.getUsername() + " signed up successfully :)");
                             out.writeObject("signed up successfully!");
+                            System.out.println("showing timeline for " + user.getUsername());
+                            out.writeObject(user.timeline());
+                            ServerManager.writeFile(ServerManager.getUsers());
+                            ServerManager.writeTweetFile(ServerManager.getTweets());
                             break;
                         }
                     }
                     else if(userChoice.equals("2")) {
+                        ServerManager.readFile();
+                        ServerManager.readTweetFile();
                         System.out.println("user is signing in...");
                         User tempUser = (User) in.readObject();
                         if(ServerManager.checkSignIn(tempUser, out)) {
@@ -70,6 +78,10 @@ public class ClientHandler implements Runnable {
                             user = ServerManager.getUsers().get(tempUser.getUsername());
                             System.out.println("user '" + user.getUsername() + "' signed in successfully :)");
                             out.writeObject("signed in successfully!");
+                            System.out.println("showing timeline for " + user.getUsername());
+                            out.writeObject(user.timeline());
+                            ServerManager.writeFile(ServerManager.getUsers());
+                            ServerManager.writeTweetFile(ServerManager.getTweets());
                             break;
                         }
                     }
