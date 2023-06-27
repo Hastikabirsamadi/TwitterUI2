@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane layoutY="8.0" prefHeight="393.0" prefWidth="600.0">
+      <ScrollPane fx:id="scrollPane" layoutY="8.0" prefHeight="393.0" prefWidth="600.0">
          <content>
-            <VBox prefHeight="393.0" prefWidth="583.0" spacing="1.0" />
+            <VBox fx:id="timeline" prefHeight="393.0" prefWidth="583.0" spacing="1.0" style="-fx-background-color: #fefefe;" />
          </content>
       </ScrollPane>
-      <Button layoutX="50.0" layoutY="413.0" mnemonicParsing="false" text="Button" />
+      <ImageView fitHeight="28.0" fitWidth="35.0" layoutX="69.0" layoutY="414.0">
+         <image>
+            <Image url="@../profile-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="273.0" layoutY="411.0">
+         <image>
+            <Image url="@../search-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="486.0" layoutY="405.0">
+         <image>
+            <Image url="@../home22.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
