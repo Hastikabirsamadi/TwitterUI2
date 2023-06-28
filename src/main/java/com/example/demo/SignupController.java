@@ -104,8 +104,7 @@ public class SignupController implements Initializable {
             if (!feedback.equals("signed up successfully!")) {
                 error.setText(feedback);
             }
-            MainPageController mainPageController = new MainPageController();
-            mainPageController.switchToMainPage(event);
+            MainPageController.switchToMainPage(event);
         }
     }
         ObservableList<String> temp = FXCollections.observableArrayList("Afghanistan","Albania","Algeria","Andorra",

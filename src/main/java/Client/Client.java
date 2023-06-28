@@ -124,9 +124,8 @@ public class Client extends Application {
     }
 
     public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException, InterruptedException {
-      //  Thread.sleep(5000);
+
         ArrayList<Tweet> value = (ArrayList<Tweet>) in.readObject();
-        System.out.println(value);
         return value;
     }
 
