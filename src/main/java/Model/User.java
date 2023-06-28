@@ -48,7 +48,7 @@ public class User implements Serializable {
         this.signupDate = LocalDate.now();
         this.SignedUp = false;
         this.SignedIn = false;
-        this.personalInfo = new PersonalInfo("-", "-", new StringBuilder("-"));
+        this.personalInfo = new PersonalInfo("-", "-", new String("-"));
     }
 
     public User(String username, String password) {

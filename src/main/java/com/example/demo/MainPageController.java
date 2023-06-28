@@ -54,7 +54,9 @@ public class MainPageController implements Initializable {
                 TweetController tweetController = (TweetController) node.getUserData();
                 tweetController.showTweet(tweet);
                 timeline.getChildren().add(node);
-            } catch (Exception ignore){}
+            } catch (Exception ignore){
+                System.out.println("toye show timeline error dari");
+            }
         }
     }
 
