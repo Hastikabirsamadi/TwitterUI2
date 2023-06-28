@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="testing add tweet and timeline">
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="for kooshan :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Quote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Retweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Retweet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/TweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/TweetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/Tweet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/Tweet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,7 @@
       <recent name="Client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.Client" />
       <module name="demo" />
@@ -254,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687952507754</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="for kooshan :)">
+      <created>1687957655292</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1687957655292</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,6 +293,7 @@
     <MESSAGE value="Images added" />
     <MESSAGE value="add tweet page completed :)" />
     <MESSAGE value="testing add tweet and timeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing add tweet and timeline" />
+    <MESSAGE value="for kooshan :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="for kooshan :)" />
   </component>
 </project>

@@ -92,7 +92,9 @@ public class ClientHandler implements Runnable {
                             for(Tweet tweet : user.timeline()) {
                                 System.out.println(tweet.getAuthor() + " : " + tweet.getBody());
                             }
+                            System.out.println(user.timeline());
                             out.writeObject(user.timeline());
+                            System.out.println("SENT");
                             String secondChoice = (String)in.readObject();
                             if(secondChoice.equals("5")) {
                                 System.out.println(user.getUsername() + " is adding a tweet...");

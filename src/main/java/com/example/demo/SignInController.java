@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import Client.Client;
+import Client.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.util.Objects;
 
@@ -69,12 +71,12 @@ public class SignInController {
         catch (ParseException e) {
             throw new RuntimeException(e);
         }
+        if (!feedback.equals("signed in successfully!")){
+            error.setText(feedback);
+            hasError = true;
+        }
         if (!hasError){
-            if (!feedback.equals("signed in successfully!")){
-                error.setText(feedback);
-            }
             MainPageController.switchToMainPage(event);
-
         }
     }
 }

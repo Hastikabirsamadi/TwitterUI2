@@ -5,6 +5,7 @@ import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,20 +13,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class MainPageController {
+public class MainPageController implements Initializable {
+    public AnchorPane parent;
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private static VBox timeline = new VBox();
+    private VBox timeline = new VBox();
 
     @FXML
     private ImageView profile;
@@ -41,11 +46,15 @@ public class MainPageController {
     private static Scene scene;
     private static ArrayList<Tweet> sentTweets;
 
-    public static void showTimeline(ArrayList<Tweet> serverTweets){
+    public void showTimeline(ArrayList<Tweet> serverTweets){
         sentTweets = serverTweets;
-        TweetController tweetController = new TweetController();
         for (Tweet tweet : sentTweets){
-            timeline.getChildren().add(tweetController.showTweet(tweet));
+            try {
+                Node node = FXMLLoader.load(Client.class.getResource("Tweet.fxml"));
+                TweetController tweetController = (TweetController) node.getUserData();
+                tweetController.showTweet(tweet);
+                timeline.getChildren().add(node);
+            } catch (Exception ignore){}
         }
     }
 
@@ -55,12 +64,14 @@ public class MainPageController {
         scene = new Scene(root);
         stage.setScene(scene);
         try {
-            showTimeline(Client.timelineReceiver());
-            for (Tweet tweet : Client.timelineReceiver()) {
-                System.out.println(tweet.getAuthor() + " : " + tweet.getBody());
-            }
+            ((MainPageController) root.getUserData()).showTimeline(Client.timelineReceiver());
+//            for (Tweet tweet : Client.timelineReceiver()) {
+//                System.out.println(tweet.getAuthor() + " : " + tweet.getBody());
+//            }
         } catch (NullPointerException e) {
             System.out.println("koomak !");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
         stage.show();
     }
@@ -81,5 +92,10 @@ public class MainPageController {
         }
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+       parent.setUserData(this);
     }
 }

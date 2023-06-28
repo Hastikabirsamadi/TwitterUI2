@@ -5,58 +5,62 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="251.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TweetController">
+<AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="251.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.TweetController">
    <children>
-      <HBox fx:id="tweetBox" layoutX="194.0" layoutY="122.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <AnchorPane prefHeight="251.0" prefWidth="442.0" style="-fx-background-color: #fefefe;">
-               <children>
-                  <Button fx:id="profile" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 100;" text="profile" textFill="#3b3838" />
-                  <Label fx:id="name" layoutX="78.0" layoutY="23.0" text="name" />
-                  <Label fx:id="username" layoutX="126.0" layoutY="23.0" text="username" textFill="#a1a6a2" />
-                  <Label fx:id="passedTime" layoutX="194.0" layoutY="22.0" text="passed time" textFill="#a1a6a2" />
-                  <Label fx:id="body" alignment="CENTER" layoutX="53.0" layoutY="83.0" prefHeight="106.0" prefWidth="334.0" text="body" />
-                  <ImageView fx:id="like" fitHeight="36.0" fitWidth="52.0" layoutX="331.0" layoutY="198.0">
-                     <image>
-                        <Image url="@../like.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="comment" fitHeight="43.0" fitWidth="43.0" layoutX="31.0" layoutY="194.0">
-                     <image>
-                        <Image url="@../comment.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="retweet" fitHeight="43.0" fitWidth="43.0" layoutX="126.0" layoutY="194.0">
-                     <image>
-                        <Image url="@../retweet.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fx:id="quote" fitHeight="36.0" fitWidth="37.0" layoutX="245.0" layoutY="198.0">
-                     <image>
-                        <Image url="@../qoute.jpg" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="commentCount" layoutX="64.0" layoutY="208.0" text="Label">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="retweetCount" layoutX="164.0" layoutY="208.0" text="Label">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="likeCount" layoutX="368.0" layoutY="207.0" text="Label">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </children>
-      </HBox>
+      <Pane fx:id="tweetBox" layoutX="130.0" layoutY="51.0" prefHeight="251.0" prefWidth="422.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="profile" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" style="-fx-background-radius: 100;" text="profile" textFill="#3b3838" />
+      <Label fx:id="username" layoutX="99.0" layoutY="33.0" text="username" textFill="#a1a6a2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="passedTime" layoutX="207.0" layoutY="33.0" text="passed time" textFill="#a1a6a2">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="body" alignment="TOP_RIGHT" layoutX="63.0" layoutY="93.0" prefHeight="106.0" prefWidth="334.0" text="body">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="like" fitHeight="36.0" fitWidth="52.0" layoutX="341.0" layoutY="208.0">
+         <image>
+            <Image url="@../like.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="comment" fitHeight="43.0" fitWidth="43.0" layoutX="41.0" layoutY="204.0">
+         <image>
+            <Image url="@../comment.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="retweet" fitHeight="43.0" fitWidth="43.0" layoutX="136.0" layoutY="204.0">
+         <image>
+            <Image url="@../retweet.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="quote" fitHeight="36.0" fitWidth="37.0" layoutX="255.0" layoutY="208.0">
+         <image>
+            <Image url="@../qoute.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="commentCount" layoutX="74.0" layoutY="218.0" text="Label">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="retweetCount" layoutX="174.0" layoutY="218.0" text="Label">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label fx:id="likeCount" layoutX="378.0" layoutY="217.0" text="Label">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

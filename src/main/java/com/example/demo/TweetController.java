@@ -13,7 +13,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -26,7 +28,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import Client.*;
 
-public class TweetController {
+public class TweetController implements Initializable {
+    public AnchorPane parent;
     @FXML
     private Button profile;
     @FXML
@@ -52,10 +55,10 @@ public class TweetController {
     @FXML
     private Label passedTime;
     @FXML
-    private HBox tweetBox;
+    private Pane tweetBox;
     private Tweet tweet;
 
-    public HBox showTweet(Tweet serverTweet){
+    public Pane showTweet(Tweet serverTweet){
         tweet = serverTweet;
 //        name.setText(tweet.getAuthor().getFirstName());
 //        tweetBox.getChildren().add(name);
@@ -82,5 +85,10 @@ public class TweetController {
 
     public void like(MouseEvent event){
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        parent.setUserData(this);
     }
 }

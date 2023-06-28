@@ -38,6 +38,7 @@ public class Client extends Application {
     private static boolean done = false;
     private static boolean isSignIn = false;
     private static boolean isSignUP = false;
+
     @Override
     public void start(Stage stage) {
         try {
@@ -122,11 +123,14 @@ public class Client extends Application {
             return temp;
     }
 
-    public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException {
-        return (ArrayList<Tweet>) in.readObject();
+    public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException, InterruptedException {
+      //  Thread.sleep(5000);
+        ArrayList<Tweet> value = (ArrayList<Tweet>) in.readObject();
+        System.out.println(value);
+        return value;
     }
 
-//    public static ArrayList<Tweet> timelineReseiver
+//    public static ArrayList<Tweet> timelineReceiver
 
     public static void addTweet(String body) throws IOException, ClassNotFoundException, InterruptedException {
         out.writeObject("5");
