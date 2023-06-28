@@ -15,6 +15,7 @@ import java.net.Socket;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 import Model.*;
 import Server.ServerManager;
@@ -39,7 +40,7 @@ public class Client extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            Parent root = FXMLLoader.load(Client.class.getResource("FirstPage.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("FirstPage.fxml")));
             Scene scene = new Scene(root);
             stage.setTitle("Twitter");
             Image twitterLogo = new Image("icon.png");
