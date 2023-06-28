@@ -54,10 +54,7 @@ public class TweetController {
     @FXML
     private HBox tweetBox;
     private Tweet tweet;
-    @FXML
-    private TextField tweetTextField;
-    @FXML
-    private Label error;
+
     public HBox showTweet(Tweet serverTweet){
         tweet = serverTweet;
 //        name.setText(tweet.getAuthor().getFirstName());
@@ -81,15 +78,7 @@ public class TweetController {
         return tweetBox;
     }
 
-    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) throws IOException, ClassNotFoundException, InterruptedException {
-        String body = tweetTextField.getText();
-        try {
-            ClientManager.addTweet(out, in, body, author);
-        }
-        catch (IllegalArgumentException e){
-            error.setText(e.getMessage());
-        }
-    }
+
 
     public void like(MouseEvent event){
 

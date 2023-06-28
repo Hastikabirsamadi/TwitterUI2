@@ -189,7 +189,7 @@ public class User implements Serializable {
         ArrayList<Tweet> foundTweets = new ArrayList<>();
         for(Tweet tweet : ServerManager.getTweets()) {
           for(User user : this.followings) {
-              if(tweet.getAuthor().getUsername().equals(user.getUsername()) ||(tweet.isFaveStar() && !tweet.getAuthor().getBlackList().contains(tweet.getAuthor()))) {
+              if(tweet.getAuthor().equals(user.getUsername()) ||(tweet.isFaveStar() && !ServerManager.getUsers().get(tweet.getAuthor()).getBlackList().contains(ServerManager.getUsers().get(tweet.getAuthor())))) {
                   foundTweets.add(tweet);
               }
           }

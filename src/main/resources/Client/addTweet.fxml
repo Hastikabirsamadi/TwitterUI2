@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.AddTweet">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AddTweetController">
    <children>
       <TextField fx:id="tweetTextField" alignment="TOP_LEFT" layoutX="56.0" layoutY="60.0" prefHeight="237.0" prefWidth="544.0" promptText="What's happening?" style="-fx-background-color: #fefefe;" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
          <font>
@@ -15,7 +14,7 @@
          </font>
       </TextField>
       <Button fx:id="profile" layoutX="14.0" layoutY="57.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="46.0" style="-fx-background-radius: 100;" text="profile" textFill="#3b3838" />
-      <Button layoutX="512.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-radius: 50; -fx-background-color: #1D9BF0;" text="Tweet" textFill="#fefefe">
+      <Button layoutX="512.0" layoutY="14.0" mnemonicParsing="false" onAction="#addTweet" prefHeight="27.0" prefWidth="70.0" style="-fx-background-radius: 50; -fx-background-color: #1D9BF0;" text="Tweet" textFill="#fefefe">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

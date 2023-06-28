@@ -66,7 +66,7 @@ public class ClientHandler implements Runnable {
                             String secondChoice = (String)in.readObject();
                             if(secondChoice.equals("5")) {
                                 System.out.println(user.getUsername() + " is adding a tweet...");
-
+                                break outer;
                             }
                             ServerManager.writeFile(ServerManager.getUsers());
                             ServerManager.writeTweetFile(ServerManager.getTweets());
@@ -85,6 +85,11 @@ public class ClientHandler implements Runnable {
                             out.writeObject("signed in successfully!");
                             System.out.println("showing timeline for " + user.getUsername());
                             out.writeObject(user.timeline());
+                            String secondChoice = (String)in.readObject();
+                            if(secondChoice.equals("5")) {
+                                System.out.println(user.getUsername() + " is adding a tweet...");
+                                break outer;
+                            }
                             ServerManager.writeFile(ServerManager.getUsers());
                             ServerManager.writeTweetFile(ServerManager.getTweets());
                             break;
@@ -108,168 +113,168 @@ public class ClientHandler implements Runnable {
                     //throw new RuntimeException(e);
                 }
             }
-            while (true) {
-                try {
-                    System.out.println("getting user's choice after sign in or sign up :)");
-                    userChoice = (String) in.readObject();
-                    if(userChoice.equals("1")) {
-                        System.out.println("user is editing personal info...");
-                        out.writeObject(user.getPersonalInfo());
-                        out.writeObject(user.getFollowers().size());
-                        out.writeObject(user.getFollowings().size());
-                        System.out.println("user's personal info is sent :)");
-                        String answer = (String) in.readObject();
-                        if(answer.equals("1")) {
-                            String ifExit = (String) in.readObject();
-                            if(ifExit.equals("ok")) {
-                                PersonalInfo info = (PersonalInfo) in.readObject();
-                                user.setPersonalInfo(info);
-                                System.out.println("user '" + user.getUsername() + "' changed their personal info");
-                                out.writeObject("Personal info edited successfully!");
-//                                ServerManager.writeFile(ServerManager.getUsers());
-//                                ServerManager.readFile();
-                            }
-                        }
-                        else if(answer.equals("2")) {
-                            System.out.println("showing user's tweets...");
-                            out.writeObject(user.getTweets());
-                        }
-                        else if(answer.equals("3")) {
-                            System.out.println("showing user's black tweets...");
-                            out.writeObject(user.getBlackList());
-                        }
-                    }
-                    else if(userChoice.equals("2")) {
-                        System.out.println("user is searching...");
-                        String word = (String) in.readObject(); // receiving word to search
-                        if(!word.equals("exit")) {
-                            out.writeObject(ServerManager.searchUser(word)); //sending an arraylist of found users for client
-                            String ans = (String) in.readObject();
-                            if (ans.equals("ok")) {
-                                User chosenUser = (User) in.readObject();// receiving the chosen person
-                                out.writeObject(ServerManager.getUsers().get(chosenUser.getUsername()));//sending the user from DB (hash map :))
-                                if (user.checkSearch(chosenUser, out)) { //checks if user is blocked
-                                    String searchChoice = (String) in.readObject();
-                                    if (searchChoice.equals("1")) { //follow
-                                        User temp = (User) in.readObject();
-                                        User followedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                        if (user.checkFollow(followedPerson, out)) {
-                                            user.follow(temp.getUsername());
-                                            out.writeObject(followedPerson.getUsername() + " is followed successfully");
-                                            System.out.println(temp.getUsername() + " is followed successfully :)");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                        }
-                                    } else if (searchChoice.equals("2")) { //unfollow
-                                        User temp = (User) in.readObject();
-                                        User unfollowedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                        if (user.checkUnfollow(unfollowedPerson, out)) {
-                                            user.unfollow(temp.getUsername());
-                                            out.writeObject(temp.getUsername() + " is unfollowed successfully");
-                                            System.out.println(temp.getUsername() + " is unfollowed successfully :)");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                        }
-                                    } else if (searchChoice.equals("3")) { //block
-                                        User temp = (User) in.readObject();
-                                        User blockedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                        if (user.checkBlock(blockedPerson, out)) {
-                                            user.block(blockedPerson.getUsername());
-                                            out.writeObject(blockedPerson.getUsername() + " is blocked successfully");
-                                            System.out.println(blockedPerson.getUsername() + " is blocked successfully");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                        }
-                                    } else if (searchChoice.equals("4")) { //unblock
-                                        User temp = (User) in.readObject();
-                                        User unblockedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                        if (user.checkUnblock(unblockedPerson, out)) {
-                                            user.unblock(unblockedPerson.getUsername());
-                                            out.writeObject(unblockedPerson.getUsername() + " is unblocked successfully");
-                                            System.out.println(unblockedPerson.getUsername() + " is unblocked successfully");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else if(userChoice.equals("3")) {
-                        System.out.println("showing timeline for " + user.getUsername());
-                        out.writeObject(user.timeline());
-                     //   String ans = (String) in.readObject();
-//                        if(ans.equals("ok")) {
-                            Tweet tempTweet = (Tweet) in.readObject();
-                            out.writeObject(ServerManager.getUsers().get(tempTweet.getAuthor()));
-                            String searchChoice = (String) in.readObject();
-                            if (searchChoice.equals("1")) { //follow
-                                User temp = (User) in.readObject();
-                                User followedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                if (user.checkFollow(followedPerson, out)) {
-                                    user.follow(temp.getUsername());
-                                    out.writeObject(followedPerson.getUsername() + " is followed successfully");
-                                    System.out.println(temp.getUsername() + " is followed successfully :)");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                }
-                            } else if (searchChoice.equals("2")) { //unfollow
-                                User temp = (User) in.readObject();
-                                User unfollowedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                if (user.checkUnfollow(unfollowedPerson, out)) {
-                                    user.unfollow(temp.getUsername());
-                                    out.writeObject(temp.getUsername() + " is unfollowed successfully");
-                                    System.out.println(temp.getUsername() + " is unfollowed successfully :)");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                }
-                            } else if (searchChoice.equals("3")) { //block
-                                User temp = (User) in.readObject();
-                                User blockedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                if (user.checkBlock(blockedPerson, out)) {
-                                    user.block(blockedPerson.getUsername());
-                                    out.writeObject(blockedPerson.getUsername() + " is blocked successfully");
-                                    System.out.println(blockedPerson.getUsername() + " is blocked successfully");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                }
-                            } else if (searchChoice.equals("4")) { //unblock
-                                User temp = (User) in.readObject();
-                                User unblockedPerson = ServerManager.getUsers().get(temp.getUsername());
-                                if (user.checkUnblock(unblockedPerson, out)) {
-                                    user.unblock(unblockedPerson.getUsername());
-                                    out.writeObject(unblockedPerson.getUsername() + " is unblocked successfully");
-                                    System.out.println(unblockedPerson.getUsername() + " is unblocked successfully");
-//                                        ServerManager.writeFile(ServerManager.getUsers());
-//                                        ServerManager.readFile();
-                                }
-                            }
-                       // }
-                    }
-                    else if(userChoice.equals("4")) {
-                        System.out.println("user is adding a tweet...");
-                        String ifExit = (String) in.readObject();
-                        if(ifExit.equals("ok")) {
-                            Tweet tweet = (Tweet) in.readObject();
-                            tweet.setAuthor(user.getUsername());
-                            user.tweet(tweet);
-                            System.out.println("user '" + user.getUsername() + "' added tweet successfully");
-                            out.writeObject("tweet added successfully!");
-                            ServerManager.writeTweetFile(ServerManager.getTweets());
-                            ServerManager.readTweetFile();
-                        }
-                    }
-                    else if(userChoice.equals("5")) {
-//                        ServerManager.writeFile(ServerManager.getUsers());
-//                        ServerManager.readFile();
-                        break;
-                    }
-                } catch (ClassNotFoundException e) {
-                    System.out.println("class not found exception");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+//            while (true) {
+//                try {
+//                    System.out.println("getting user's choice after sign in or sign up :)");
+//                    userChoice = (String) in.readObject();
+//                    if(userChoice.equals("1")) {
+//                        System.out.println("user is editing personal info...");
+//                        out.writeObject(user.getPersonalInfo());
+//                        out.writeObject(user.getFollowers().size());
+//                        out.writeObject(user.getFollowings().size());
+//                        System.out.println("user's personal info is sent :)");
+//                        String answer = (String) in.readObject();
+//                        if(answer.equals("1")) {
+//                            String ifExit = (String) in.readObject();
+//                            if(ifExit.equals("ok")) {
+//                                PersonalInfo info = (PersonalInfo) in.readObject();
+//                                user.setPersonalInfo(info);
+//                                System.out.println("user '" + user.getUsername() + "' changed their personal info");
+//                                out.writeObject("Personal info edited successfully!");
+////                                ServerManager.writeFile(ServerManager.getUsers());
+////                                ServerManager.readFile();
+//                            }
+//                        }
+//                        else if(answer.equals("2")) {
+//                            System.out.println("showing user's tweets...");
+//                            out.writeObject(user.getTweets());
+//                        }
+//                        else if(answer.equals("3")) {
+//                            System.out.println("showing user's black tweets...");
+//                            out.writeObject(user.getBlackList());
+//                        }
+//                    }
+//                    else if(userChoice.equals("2")) {
+//                        System.out.println("user is searching...");
+//                        String word = (String) in.readObject(); // receiving word to search
+//                        if(!word.equals("exit")) {
+//                            out.writeObject(ServerManager.searchUser(word)); //sending an arraylist of found users for client
+//                            String ans = (String) in.readObject();
+//                            if (ans.equals("ok")) {
+//                                User chosenUser = (User) in.readObject();// receiving the chosen person
+//                                out.writeObject(ServerManager.getUsers().get(chosenUser.getUsername()));//sending the user from DB (hash map :))
+//                                if (user.checkSearch(chosenUser, out)) { //checks if user is blocked
+//                                    String searchChoice = (String) in.readObject();
+//                                    if (searchChoice.equals("1")) { //follow
+//                                        User temp = (User) in.readObject();
+//                                        User followedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                        if (user.checkFollow(followedPerson, out)) {
+//                                            user.follow(temp.getUsername());
+//                                            out.writeObject(followedPerson.getUsername() + " is followed successfully");
+//                                            System.out.println(temp.getUsername() + " is followed successfully :)");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                        }
+//                                    } else if (searchChoice.equals("2")) { //unfollow
+//                                        User temp = (User) in.readObject();
+//                                        User unfollowedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                        if (user.checkUnfollow(unfollowedPerson, out)) {
+//                                            user.unfollow(temp.getUsername());
+//                                            out.writeObject(temp.getUsername() + " is unfollowed successfully");
+//                                            System.out.println(temp.getUsername() + " is unfollowed successfully :)");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                        }
+//                                    } else if (searchChoice.equals("3")) { //block
+//                                        User temp = (User) in.readObject();
+//                                        User blockedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                        if (user.checkBlock(blockedPerson, out)) {
+//                                            user.block(blockedPerson.getUsername());
+//                                            out.writeObject(blockedPerson.getUsername() + " is blocked successfully");
+//                                            System.out.println(blockedPerson.getUsername() + " is blocked successfully");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                        }
+//                                    } else if (searchChoice.equals("4")) { //unblock
+//                                        User temp = (User) in.readObject();
+//                                        User unblockedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                        if (user.checkUnblock(unblockedPerson, out)) {
+//                                            user.unblock(unblockedPerson.getUsername());
+//                                            out.writeObject(unblockedPerson.getUsername() + " is unblocked successfully");
+//                                            System.out.println(unblockedPerson.getUsername() + " is unblocked successfully");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                    else if(userChoice.equals("3")) {
+//                        System.out.println("showing timeline for " + user.getUsername());
+//                        out.writeObject(user.timeline());
+//                     //   String ans = (String) in.readObject();
+////                        if(ans.equals("ok")) {
+//                            Tweet tempTweet = (Tweet) in.readObject();
+//                            out.writeObject(ServerManager.getUsers().get(tempTweet.getAuthor()));
+//                            String searchChoice = (String) in.readObject();
+//                            if (searchChoice.equals("1")) { //follow
+//                                User temp = (User) in.readObject();
+//                                User followedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                if (user.checkFollow(followedPerson, out)) {
+//                                    user.follow(temp.getUsername());
+//                                    out.writeObject(followedPerson.getUsername() + " is followed successfully");
+//                                    System.out.println(temp.getUsername() + " is followed successfully :)");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                }
+//                            } else if (searchChoice.equals("2")) { //unfollow
+//                                User temp = (User) in.readObject();
+//                                User unfollowedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                if (user.checkUnfollow(unfollowedPerson, out)) {
+//                                    user.unfollow(temp.getUsername());
+//                                    out.writeObject(temp.getUsername() + " is unfollowed successfully");
+//                                    System.out.println(temp.getUsername() + " is unfollowed successfully :)");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                }
+//                            } else if (searchChoice.equals("3")) { //block
+//                                User temp = (User) in.readObject();
+//                                User blockedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                if (user.checkBlock(blockedPerson, out)) {
+//                                    user.block(blockedPerson.getUsername());
+//                                    out.writeObject(blockedPerson.getUsername() + " is blocked successfully");
+//                                    System.out.println(blockedPerson.getUsername() + " is blocked successfully");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                }
+//                            } else if (searchChoice.equals("4")) { //unblock
+//                                User temp = (User) in.readObject();
+//                                User unblockedPerson = ServerManager.getUsers().get(temp.getUsername());
+//                                if (user.checkUnblock(unblockedPerson, out)) {
+//                                    user.unblock(unblockedPerson.getUsername());
+//                                    out.writeObject(unblockedPerson.getUsername() + " is unblocked successfully");
+//                                    System.out.println(unblockedPerson.getUsername() + " is unblocked successfully");
+////                                        ServerManager.writeFile(ServerManager.getUsers());
+////                                        ServerManager.readFile();
+//                                }
+//                            }
+//                       // }
+//                    }
+//                    else if(userChoice.equals("4")) {
+//                        System.out.println("user is adding a tweet...");
+//                        String ifExit = (String) in.readObject();
+//                        if(ifExit.equals("ok")) {
+//                            Tweet tweet = (Tweet) in.readObject();
+//                            tweet.setAuthor(user.getUsername());
+//                            user.tweet(tweet);
+//                            System.out.println("user '" + user.getUsername() + "' added tweet successfully");
+//                            out.writeObject("tweet added successfully!");
+//                            ServerManager.writeTweetFile(ServerManager.getTweets());
+//                            ServerManager.readTweetFile();
+//                        }
+//                    }
+//                    else if(userChoice.equals("5")) {
+////                        ServerManager.writeFile(ServerManager.getUsers());
+////                        ServerManager.readFile();
+//                        break;
+//                    }
+//                } catch (ClassNotFoundException e) {
+//                    System.out.println("class not found exception");
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
         }
     }
 }
