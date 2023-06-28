@@ -124,10 +124,12 @@ public class Client extends Application {
     }
 
     public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException, InterruptedException {
+
         ArrayList<Tweet> value = (ArrayList<Tweet>) in.readObject();
         return value;
     }
 
+//    public static ArrayList<Tweet> timelineReceiver
 
     public static void addTweet(String body) throws IOException, ClassNotFoundException, InterruptedException {
         out.writeObject("5");
@@ -136,18 +138,6 @@ public class Client extends Application {
         }
         Tweet tweet = new Tweet(body, 0,0,0);
         out.writeObject(tweet);
-        Thread.sleep(300);
-        String res = (String) in.readObject();
-        System.out.println(res);
-    }
-
-    public static void addInfo(String bio, String location, String website) throws IOException, ClassNotFoundException, InterruptedException {
-        out.writeObject("");
-        if (bio.length() > 160) {
-            throw new IllegalArgumentException("You can at last enter 160 characters!!!");
-        }
-        PersonalInfo personalInfo = new PersonalInfo(website, location, bio);
-        out.writeObject(personalInfo);
         Thread.sleep(300);
         String res = (String) in.readObject();
         System.out.println(res);

@@ -59,7 +59,6 @@ public class MainPageController implements Initializable {
     }
 
     public static void switchToMainPage(ActionEvent event) throws IOException, ClassNotFoundException {
-
         Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
