@@ -28,14 +28,14 @@
             <Image url="@../home22.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="392.0" layoutY="407.0">
+      <ImageView fx:id="photoTweet" fitHeight="42.0" fitWidth="48.0" layoutX="392.0" layoutY="407.0">
          <image>
-            <Image url="@../add%20photo%202.png" />
+            <Image url="@../add photo 2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="512.0" layoutY="402.0" onMouseClicked="#switchToAddTweet">
+      <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="510.0" layoutY="404.0" onMouseClicked="#switchToAddTweet">
          <image>
-            <Image url="@../tweet%20text2.jpg" />
+            <Image url="@../tweet text2.jpg" />
          </image>
       </ImageView>
    </children>

@@ -33,6 +33,10 @@ public class MainPageController {
     private ImageView search;
     @FXML
     private ImageView home;
+    @FXML
+    private Button textTweet;
+    @FXML
+    private ImageView photoTweet;
     private Stage stage;
     private Scene scene;
     private ArrayList<Tweet> sentTweets;
@@ -54,24 +58,21 @@ public class MainPageController {
         stage.show();
     }
 
-    public void switchToAddTweet(MouseEvent event) throws IOException {
+    public void switchToAddTweet(MouseEvent event) {
         ImageView imageView = (ImageView) event.getSource();
-        Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("addTweet.fxml")));
-        stage = (Stage) imageView.getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("addTweet.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) imageView.getScene().getWindow();
+        Scene scene = null;
+        if (root != null) {
+            scene = new Scene(root);
+        }
         stage.setScene(scene);
         stage.show();
-//        try {
-//            root=loader.load();
-//        }catch (IOException e){
-//            System.out.println("KOMAK!");
-//        }
-//        stage = (Stage) imageView.getScene().getWindow();
-//        scene = null;
-//        if (root != null) {
-//            scene = new Scene(root);
-//        }
-//        stage.setScene(scene);
-//        stage.show();
     }
 }
