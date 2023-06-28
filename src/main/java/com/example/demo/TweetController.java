@@ -2,7 +2,7 @@ package com.example.demo;
 
 
 import Client.Client;
-import Model.Tweet;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

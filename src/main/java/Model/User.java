@@ -188,11 +188,11 @@ public class User implements Serializable {
     public ArrayList<Tweet> timeline() {
         ArrayList<Tweet> foundTweets = new ArrayList<>();
         for(Tweet tweet : ServerManager.getTweets()) {
-          for(User user : this.followings) {
+        //  for(User user : this.followings) {
             //  if(tweet.getAuthor().equals(user.getUsername()) ||(tweet.isFaveStar() && !ServerManager.getUsers().get(tweet.getAuthor()).getBlackList().contains(ServerManager.getUsers().get(tweet.getAuthor())))) {
                   foundTweets.add(tweet);
               //}
-          }
+          //}
         }
         return foundTweets;
     }

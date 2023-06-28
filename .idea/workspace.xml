@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="add tweet page completed :)">
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="testing add tweet and timeline">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Quote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Retweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Retweet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/AddTweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AddTweetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/TweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/TweetController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,7 @@
       <recent name="Client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.Client" />
       <module name="demo" />
@@ -246,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687948252537</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="testing add tweet and timeline">
+      <created>1687952507754</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1687952507754</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,6 +287,7 @@
     <MESSAGE value="Edited add tweet fxml" />
     <MESSAGE value="Images added" />
     <MESSAGE value="add tweet page completed :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tweet page completed :)" />
+    <MESSAGE value="testing add tweet and timeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing add tweet and timeline" />
   </component>
 </project>

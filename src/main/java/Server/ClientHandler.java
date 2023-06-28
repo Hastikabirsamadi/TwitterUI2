@@ -36,13 +36,12 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
-
-        for(User user2 : ServerManager.getUsers().values()) {
-            System.out.println(user2.getUsername() + "  " + user2.getPhoneNumber());
-        }
         String userChoice;
         outer : while (true) {
             while (true) {
+                for(Tweet tweet : ServerManager.getTweets()) {
+                    System.out.println(tweet.getAuthor() + " : " + tweet.getBody());
+                }
                 try {
                     System.out.println("getting user's choice");
                     userChoice = (String) in.readObject();
@@ -90,6 +89,9 @@ public class ClientHandler implements Runnable {
                             System.out.println("user '" + user.getUsername() + "' signed in successfully :)");
                             out.writeObject("signed in successfully!");
                             System.out.println("showing timeline for " + user.getUsername());
+                            for(Tweet tweet : user.timeline()) {
+                                System.out.println(tweet.getAuthor() + " : " + tweet.getBody());
+                            }
                             out.writeObject(user.timeline());
                             String secondChoice = (String)in.readObject();
                             if(secondChoice.equals("5")) {

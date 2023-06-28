@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 import Model.*;
+import com.example.demo.*;
 import Server.ServerManager;
 
 import java.io.IOException;
@@ -124,6 +125,8 @@ public class Client extends Application {
     public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException {
         return (ArrayList<Tweet>) in.readObject();
     }
+
+//    public static ArrayList<Tweet> timelineReseiver
 
     public static void addTweet(String body) throws IOException, ClassNotFoundException, InterruptedException {
         out.writeObject("5");

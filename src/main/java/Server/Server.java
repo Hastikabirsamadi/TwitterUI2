@@ -8,6 +8,7 @@ public class Server extends Thread{
     private static ArrayList<ClientHandler> clients = new ArrayList<>();
     public static void main(String[] args){
         ServerManager.readFile();
+        ServerManager.readTweetFile();
         ServerThread serverThread = new ServerThread();
         serverThread.start();
     }

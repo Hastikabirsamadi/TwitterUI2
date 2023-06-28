@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import Client.Client;
-import Model.Tweet;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +25,7 @@ public class MainPageController {
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private static VBox timeline;
+    private static VBox timeline = new VBox();
 
     @FXML
     private ImageView profile;
@@ -54,7 +54,14 @@ public class MainPageController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        showTimeline(Client.timelineReceiver());
+        try {
+            showTimeline(Client.timelineReceiver());
+            for (Tweet tweet : Client.timelineReceiver()) {
+                System.out.println(tweet.getAuthor() + " : " + tweet.getBody());
+            }
+        } catch (NullPointerException e) {
+            System.out.println("koomak !");
+        }
         stage.show();
     }
 

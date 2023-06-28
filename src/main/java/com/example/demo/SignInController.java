@@ -73,8 +73,7 @@ public class SignInController {
             if (!feedback.equals("signed in successfully!")){
                 error.setText(feedback);
             }
-            MainPageController mainPageController = new MainPageController();
-            mainPageController.switchToMainPage(event);
+            MainPageController.switchToMainPage(event);
 
         }
     }
