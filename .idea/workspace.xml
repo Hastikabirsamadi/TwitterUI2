@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="Images added">
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="add tweet page completed :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/ClientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/AddTweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AddTweetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/addTweet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687943956635</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add tweet page completed :)">
+      <created>1687948252537</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687948252537</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,6 +278,7 @@
     <MESSAGE value="timeline v.01&#10;ClientHandler edited" />
     <MESSAGE value="Edited add tweet fxml" />
     <MESSAGE value="Images added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Images added" />
+    <MESSAGE value="add tweet page completed :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tweet page completed :)" />
   </component>
 </project>

@@ -149,17 +149,17 @@ public class ClientManager {
         System.out.println(res);
     }
 
-    public static void addTweet(ObjectOutputStream out, ObjectInputStream in, String body, String author) throws IOException, ClassNotFoundException, InterruptedException {
-            out.writeObject("5");
-        if (body.length() > 280) {
-                throw new IllegalArgumentException("Your tweet has more than 280 characters!!!");
-            }
-        Tweet tweet = new Tweet(body, 0,0,0, author);
-        out.writeObject(tweet);
-        Thread.sleep(300);
-        String res = (String) in.readObject();
-        System.out.println(res);
-    }
+//    public static void addTweet(ObjectOutputStream out, ObjectInputStream in, String body, String author) throws IOException, ClassNotFoundException, InterruptedException {
+//            out.writeObject("5");
+//        if (body.length() > 280) {
+//                throw new IllegalArgumentException("Your tweet has more than 280 characters!!!");
+//            }
+//        Tweet tweet = new Tweet(body, 0,0,0, author);
+//        out.writeObject(tweet);
+//        Thread.sleep(300);
+//        String res = (String) in.readObject();
+//        System.out.println(res);
+//    }
 
     public static void showTweet(ObjectInputStream in) throws IOException, ClassNotFoundException {
         ArrayList<Tweet> tweets = new ArrayList<>();

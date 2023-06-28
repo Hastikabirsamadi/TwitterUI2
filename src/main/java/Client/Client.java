@@ -125,6 +125,18 @@ public class Client extends Application {
         return (ArrayList<Tweet>) in.readObject();
     }
 
+    public static void addTweet(String body) throws IOException, ClassNotFoundException, InterruptedException {
+        out.writeObject("5");
+        if (body.length() > 280) {
+            throw new IllegalArgumentException("Your tweet has more than 280 characters!!!");
+        }
+        Tweet tweet = new Tweet(body, 0,0,0);
+        out.writeObject(tweet);
+        Thread.sleep(300);
+        String res = (String) in.readObject();
+        System.out.println(res);
+    }
+
     public static void main(String[] args) {
         launch(args);
     }

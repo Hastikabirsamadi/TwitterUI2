@@ -23,8 +23,7 @@ public class Tweet implements Serializable {
         return body;
     }
 
-    public Tweet(String body, int likes, int retweets, int comments, String author) {
-        this.author = author;
+    public Tweet(String body, int likes, int retweets, int comments) {
         this.body = body;
         this.likes = likes;
         this.retweets = retweets;

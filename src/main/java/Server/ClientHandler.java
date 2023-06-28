@@ -66,7 +66,13 @@ public class ClientHandler implements Runnable {
                             String secondChoice = (String)in.readObject();
                             if(secondChoice.equals("5")) {
                                 System.out.println(user.getUsername() + " is adding a tweet...");
-                                break outer;
+                                Tweet tweet = (Tweet) in.readObject();
+                                tweet.setAuthor(user.getUsername());
+                                user.tweet(tweet);
+                                System.out.println("user '" + user.getUsername() + "' added tweet successfully");
+                                out.writeObject("tweet added successfully!");
+                                ServerManager.writeTweetFile(ServerManager.getTweets());
+                                ServerManager.readTweetFile();
                             }
                             ServerManager.writeFile(ServerManager.getUsers());
                             ServerManager.writeTweetFile(ServerManager.getTweets());
@@ -88,7 +94,13 @@ public class ClientHandler implements Runnable {
                             String secondChoice = (String)in.readObject();
                             if(secondChoice.equals("5")) {
                                 System.out.println(user.getUsername() + " is adding a tweet...");
-                                break outer;
+                                Tweet tweet = (Tweet) in.readObject();
+                                tweet.setAuthor(user.getUsername());
+                                user.tweet(tweet);
+                                System.out.println("user '" + user.getUsername() + "' added tweet successfully");
+                                out.writeObject("tweet added successfully!");
+                                ServerManager.writeTweetFile(ServerManager.getTweets());
+                                ServerManager.readTweetFile();
                             }
                             ServerManager.writeFile(ServerManager.getUsers());
                             ServerManager.writeTweetFile(ServerManager.getTweets());

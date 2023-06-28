@@ -25,7 +25,7 @@ public class MainPageController {
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private VBox timeline;
+    private static VBox timeline;
 
     @FXML
     private ImageView profile;
@@ -37,11 +37,11 @@ public class MainPageController {
     private Button textTweet;
     @FXML
     private ImageView photoTweet;
-    private Stage stage;
-    private Scene scene;
-    private ArrayList<Tweet> sentTweets;
+    private static Stage stage;
+    private static Scene scene;
+    private static ArrayList<Tweet> sentTweets;
 
-    public void showTimeline(ArrayList<Tweet> serverTweets){
+    public static void showTimeline(ArrayList<Tweet> serverTweets){
         sentTweets = serverTweets;
         TweetController tweetController = new TweetController();
         for (Tweet tweet : sentTweets){
@@ -49,12 +49,12 @@ public class MainPageController {
         }
     }
 
-    public void switchToMainPage(ActionEvent event) throws IOException, ClassNotFoundException {
+    public static void switchToMainPage(ActionEvent event) throws IOException, ClassNotFoundException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        this.showTimeline(Client.timelineReceiver());
+        showTimeline(Client.timelineReceiver());
         stage.show();
     }
 

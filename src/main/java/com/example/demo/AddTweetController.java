@@ -1,10 +1,11 @@
 package com.example.demo;
 
-import Client.ClientManager;
+import Client.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -16,6 +17,7 @@ public class AddTweetController {
     private TextField tweetTextField;
     @FXML
     private Label error;
+    private boolean hasError;
 
 //    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) throws IOException, ClassNotFoundException, InterruptedException {
 //        String body = tweetTextField.getText();
@@ -27,23 +29,28 @@ public class AddTweetController {
 //        }
 //    }
 
-    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) {
-        String body = tweetTextField.getText();
-        try {
-            ClientManager.addTweet(out, in, body, author);
-        }
-        catch (IllegalArgumentException | IOException | ClassNotFoundException | InterruptedException e){
-            error.setText(e.getMessage());
-        }
-    }
-
-//    public void addNewTweet(ActionEvent event) {
+//    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) {
 //        String body = tweetTextField.getText();
 //        try {
-//            ClientManager.addTweet(out, in, body, author);
+//            Client.addTweet(out, in, body, author);
 //        }
 //        catch (IllegalArgumentException | IOException | ClassNotFoundException | InterruptedException e){
 //            error.setText(e.getMessage());
 //        }
 //    }
+
+    public void addNewTweet(ActionEvent event) throws IOException, ClassNotFoundException {
+        hasError = false;
+        String body = tweetTextField.getText();
+        try {
+            Client.addTweet(body);
+        }
+        catch (IllegalArgumentException | IOException | ClassNotFoundException | InterruptedException e){
+            hasError = true;
+            error.setText(e.getMessage());
+        }
+        if(!hasError) {
+            MainPageController.switchToMainPage(event);
+        }
+    }
 }
