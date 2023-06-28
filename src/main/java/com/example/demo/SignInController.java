@@ -68,7 +68,7 @@ public class SignInController {
             hasError = true;
             error.setText(e.getMessage());
         }
-        catch (ParseException e) {
+         catch (ParseException e) {
             throw new RuntimeException(e);
         }
         if (!feedback.equals("signed in successfully!")){

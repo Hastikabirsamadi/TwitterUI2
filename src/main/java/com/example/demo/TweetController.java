@@ -60,8 +60,6 @@ public class TweetController implements Initializable {
 
     public Pane showTweet(Tweet serverTweet){
         tweet = serverTweet;
-//        name.setText(tweet.getAuthor().getFirstName());
-//        tweetBox.getChildren().add(name);
         username.setText(tweet.getAuthor());
         tweetBox.getChildren().add(username);
         passedTime.setText(tweet.calculateTime());

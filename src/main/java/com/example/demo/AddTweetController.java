@@ -19,26 +19,6 @@ public class AddTweetController {
     private Label error;
     private boolean hasError;
 
-//    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) throws IOException, ClassNotFoundException, InterruptedException {
-//        String body = tweetTextField.getText();
-//        try {
-//            ClientManager.addTweet(out, in, body, author);
-//        }
-//        catch (IllegalArgumentException e){
-//            error.setText(e.getMessage());
-//        }
-//    }
-
-//    public void addTweet(ActionEvent event, ObjectInputStream in, ObjectOutputStream out, String author) {
-//        String body = tweetTextField.getText();
-//        try {
-//            Client.addTweet(out, in, body, author);
-//        }
-//        catch (IllegalArgumentException | IOException | ClassNotFoundException | InterruptedException e){
-//            error.setText(e.getMessage());
-//        }
-//    }
-
     public void addNewTweet(ActionEvent event) throws IOException, ClassNotFoundException {
         hasError = false;
         String body = tweetTextField.getText();

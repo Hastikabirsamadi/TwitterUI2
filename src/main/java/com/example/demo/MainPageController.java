@@ -91,6 +91,23 @@ public class MainPageController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToShowProfile(MouseEvent event) {
+        ImageView imageView = (ImageView) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) imageView.getScene().getWindow();
+        Scene scene = null;
+        if (root != null) {
+            scene = new Scene(root);
+        }
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

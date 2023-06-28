@@ -6,10 +6,10 @@ import java.util.Objects;
 public class PersonalInfo implements Serializable {
     private String website;
     private String location;
-    private StringBuilder bio;
+    private String bio;
 
 
-    public PersonalInfo(String website, String location, StringBuilder bio) {
+    public PersonalInfo(String website, String location, String bio) {
         this.website = website;
         this.location = location;
         this.bio = bio;
@@ -31,11 +31,11 @@ public class PersonalInfo implements Serializable {
         this.location = location;
     }
 
-    public StringBuilder getBio() {
+    public String getBio() {
         return bio;
     }
 
-    public void setBio(StringBuilder bio) {
+    public void setBio(String bio) {
         this.bio = bio;
     }
 
@@ -48,8 +48,8 @@ public class PersonalInfo implements Serializable {
         if(this.location.equals("exit")) {
             this.location = "-";
         }
-        if(Objects.equals(this.bio, new StringBuilder("exit\n"))) {
-            this.bio = new StringBuilder("-");
+        if(Objects.equals(this.bio, ("exit"))) {
+            this.bio = "-";
         }
         return "     PersonalInfo\n" + "-----------------------"+ "\n" + "bio : \n" + bio + "\n"
                 +"location : " + location + "\n" +
