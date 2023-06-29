@@ -13,7 +13,7 @@
             <VBox fx:id="timeline" prefHeight="393.0" prefWidth="583.0" spacing="1.0" style="-fx-background-color: #fefefe;" />
          </content>
       </ScrollPane>
-      <ImageView fx:id="profile" fitHeight="28.0" fitWidth="35.0" layoutX="36.0" layoutY="414.0">
+      <ImageView fx:id="profile" fitHeight="28.0" fitWidth="35.0" layoutX="36.0" layoutY="414.0" onMouseClicked="#switchToShowProfile">
          <image>
             <Image url="@../profile-icon.png" />
          </image>

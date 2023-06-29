@@ -94,7 +94,7 @@ public class MainPageController implements Initializable {
     }
     public void switchToShowProfile(MouseEvent event) throws IOException, ClassNotFoundException {
         ImageView imageView = (ImageView) event.getSource();
-        FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfileForOthers.fxml"));
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
         Parent root = null;
         try {
             root=loader.load();
