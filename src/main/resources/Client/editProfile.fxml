@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="496.0" prefWidth="548.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.EditProfileController">
+   <children>
+      <Line endX="226.99993896484375" endY="0.9999847412109375" fill="#7b7474" layoutX="320.0" layoutY="131.0" startX="-320.0" startY="0.999969482421875" stroke="#7b7474" />
+      <Circle fx:id="avatar" fill="#fefefe" layoutX="81.0" layoutY="143.0" radius="37.0" stroke="#7b7474" strokeType="INSIDE" />
+      <Line endX="100.0" layoutX="394.0" layoutY="245.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
+      <TextField fx:id="nameTextField" layoutX="64.0" layoutY="217.0" prefHeight="26.0" prefWidth="431.0" promptText="First Name" style="-fx-background-color: #fefefe;" />
+      <TextField fx:id="lastNameTextField" layoutX="64.0" layoutY="278.0" prefHeight="26.0" prefWidth="431.0" promptText="Bio" style="-fx-background-color: #fefefe;" />
+      <Line endX="100.0" layoutX="394.0" layoutY="306.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
+      <Line endX="100.0" layoutX="394.0" layoutY="367.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
+      <TextField fx:id="phoneOrEmail" layoutX="63.0" layoutY="336.0" prefHeight="26.0" prefWidth="431.0" promptText="Location" style="-fx-background-color: #fefefe;" />
+      <TextField fx:id="username" layoutX="62.0" layoutY="399.0" prefHeight="26.0" prefWidth="431.0" promptText="Website" style="-fx-background-color: #fefefe;" />
+      <Line endX="100.0" layoutX="394.0" layoutY="428.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#00acee" />
+   </children>
+</AnchorPane>
