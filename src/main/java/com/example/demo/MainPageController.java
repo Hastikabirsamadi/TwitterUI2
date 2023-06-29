@@ -92,7 +92,7 @@ public class MainPageController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToShowProfile(MouseEvent event) {
+    public void switchToShowProfile(MouseEvent event) throws IOException, ClassNotFoundException {
         ImageView imageView = (ImageView) event.getSource();
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
         Parent root = null;
@@ -107,6 +107,7 @@ public class MainPageController implements Initializable {
             scene = new Scene(root);
         }
         stage.setScene(scene);
+        Client.showMyProfile();
         stage.show();
     }
 
