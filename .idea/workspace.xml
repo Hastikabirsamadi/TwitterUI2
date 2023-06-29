@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="timeline debugged :)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/showProfileForOthers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="show my profile test3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/showProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/showProfile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/showProfileForOthers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/showProfileForOthers.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +271,35 @@
       <option name="project" value="LOCAL" />
       <updated>1687970613376</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="show my profile test">
+      <created>1688042570772</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1688042570772</updated>
+    </task>
+    <task id="LOCAL-00025" summary="show my profile test">
+      <created>1688042740304</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688042740304</updated>
+    </task>
+    <task id="LOCAL-00026" summary="show my profile test2">
+      <created>1688042833417</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1688042833417</updated>
+    </task>
+    <task id="LOCAL-00027" summary="show my profile test3">
+      <created>1688042894692</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1688042894692</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,7 +314,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="SignupController" />
     <MESSAGE value="Edited SignupController class" />
     <MESSAGE value="SignupController feedback" />
     <MESSAGE value="Edited first page scene" />
@@ -308,6 +336,9 @@
     <MESSAGE value="felan faghat ta add tweet doroste" />
     <MESSAGE value="timeline debuged :)" />
     <MESSAGE value="timeline debugged :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="timeline debugged :)" />
+    <MESSAGE value="show my profile test" />
+    <MESSAGE value="show my profile test2" />
+    <MESSAGE value="show my profile test3" />
+    <option name="LAST_COMMIT_MESSAGE" value="show my profile test3" />
   </component>
 </project>

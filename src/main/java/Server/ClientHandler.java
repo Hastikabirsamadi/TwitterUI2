@@ -68,7 +68,11 @@ public class ClientHandler implements Runnable {
                                     out.writeObject(user.timeline());
                                     System.out.println("timeline SENT!");
                                 }
-                                if (secondChoice.equals("5")) {
+                                else if(secondChoice.equals("2")) {
+                                    out.writeObject(user);
+                                    System.out.println("user info sent");
+                                }
+                                else if (secondChoice.equals("5")) {
                                     System.out.println(user.getUsername() + " is adding a tweet...");
                                     Tweet tweet = (Tweet) in.readObject();
                                     tweet.setAuthor(user.getUsername());
@@ -78,7 +82,7 @@ public class ClientHandler implements Runnable {
                                     ServerManager.writeTweetFile(ServerManager.getTweets());
                                     ServerManager.readTweetFile();
                                 }
-                                if (secondChoice.equals("0")) {
+                                else if (secondChoice.equals("0")) {
                                     break outer;
                                 }
                                 ServerManager.writeFile(ServerManager.getUsers());
