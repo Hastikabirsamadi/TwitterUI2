@@ -2,10 +2,12 @@ package Client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -59,12 +61,13 @@ public class Client extends Application {
             e.printStackTrace();
         }
     }
-    public static String signUp(String name, String lastName, String emailOrNumber , String userName, String pass,
-                                 String passRepetition,String country, LocalDate birthDate)
+
+    public static String signUp(String name, String lastName, String emailOrNumber, String userName, String pass,
+                                String passRepetition, String country, LocalDate birthDate)
             throws ParseException, IOException, InterruptedException, ClassNotFoundException {
         String temp;
         String phone = null, email = null;
-        if(name.length() == 0 || lastName.length() == 0 || emailOrNumber.length() == 0 || userName.length() == 0 || pass.length() == 0 || passRepetition.length() == 0
+        if (name.length() == 0 || lastName.length() == 0 || emailOrNumber.length() == 0 || userName.length() == 0 || pass.length() == 0 || passRepetition.length() == 0
                 || country.length() == 0 || birthDate.getDayOfWeek() == null) {
             throw new IllegalArgumentException("Please fill in all the fields!");
         }
@@ -101,26 +104,25 @@ public class Client extends Application {
     }
 
     public static String signIn(String userName, String pass) throws ParseException {
-            if (userName.length() == 0 || pass.length() == 0){
-                throw new IllegalArgumentException("Please fill in all the fields!");
+        if (userName.length() == 0 || pass.length() == 0) {
+            throw new IllegalArgumentException("Please fill in all the fields!");
+        }
+        user = new User(userName, pass);
+        String temp = " ";
+        try {
+            out.writeObject("2");
+            out.writeObject(user);
+            Thread.sleep(500);
+            temp = (String) in.readObject();
+            if (temp.equals("signed in successfully!")) {
+                isSignIn = true;
             }
-            user = new User(userName, pass);
-            String temp = " ";
-            try {
-                out.writeObject("2");
-                out.writeObject(user);
-                Thread.sleep(500);
-                temp = (String) in.readObject();
-                if (temp.equals("signed in successfully!")){
-                    isSignIn = true;
-                }
-            }
-            catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            return temp;
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return temp;
     }
 
     public static ArrayList<Tweet> timelineReceiver() throws IOException, ClassNotFoundException, InterruptedException {
@@ -129,21 +131,68 @@ public class Client extends Application {
         return value;
     }
 
-//    public static ArrayList<Tweet> timelineReceiver
-
     public static void addTweet(String body) throws IOException, ClassNotFoundException, InterruptedException {
         out.writeObject("5");
         if (body.length() > 280) {
             throw new IllegalArgumentException("Your tweet has more than 280 characters!!!");
         }
-        Tweet tweet = new Tweet(body, 0,0,0);
+        Tweet tweet = new Tweet(body, 0, 0, 0);
         out.writeObject(tweet);
         Thread.sleep(300);
         String res = (String) in.readObject();
         System.out.println(res);
     }
 
+    public static void showMyProfile() throws IOException, ClassNotFoundException {
+        out.writeObject("2");
+        User user1 = (User) in.readObject();
+        Node node = FXMLLoader.load(Client.class.getResource("showProfile.fxml"));
+        ShowProfileController showProfileController = (ShowProfileController) node.getUserData();
+        showProfileController.showProfile(user1);
+    }
+
+
+//    public static void editProfile() throws IOException, ClassNotFoundException, InterruptedException {
+//        out.writeObject("2");
+//        if (bio.length() > 160) {
+//            System.out.println("You can at last enter 160 characters!!!");
+//            continue;
+//        }
+//        break;
+//        if(bio.toString().
+//
+//    equals("exit\n"))
+//
+//    {
+//        out.writeObject("exit");
+//        return;
+//    }
+//        System.out.println("Location:");
+//    location =input.nextLine();
+//        if(location.equals("exit"))
+//
+//    {
+//        out.writeObject("exit");
+//        return;
+//    }
+//        System.out.println("Website:");
+//    website =input.nextLine();
+//        if(website.equals("exit"))
+//
+//    {
+//        out.writeObject("exit");
+//        return;
+//    }
+//        out.writeObject("ok");
+//    PersonalInfo personalInfo = new PersonalInfo(website, location, bio);
+//        out.writeObject(personalInfo);
+//        Thread.sleep(300);
+//    String res = (String) in.readObject();
+//        System.out.println(res);
+//}
+
     public static void main(String[] args) {
         launch(args);
     }
 }
+

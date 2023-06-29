@@ -1,5 +1,8 @@
 package Model;
 
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -7,7 +10,6 @@ public class PersonalInfo implements Serializable {
     private String website;
     private String location;
     private String bio;
-
 
     public PersonalInfo(String website, String location, String bio) {
         this.website = website;
@@ -55,4 +57,5 @@ public class PersonalInfo implements Serializable {
                 +"location : " + location + "\n" +
                 "website : " + website + "\n";
     }
+
 }
