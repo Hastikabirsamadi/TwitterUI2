@@ -94,7 +94,7 @@ public class MainPageController implements Initializable {
     }
     public void switchToShowProfile(MouseEvent event) {
         ImageView imageView = (ImageView) event.getSource();
-        FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfileForOthers.fxml"));
         Parent root = null;
         try {
             root=loader.load();
