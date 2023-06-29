@@ -48,11 +48,11 @@ public class MainPageController implements Initializable {
 
     public void showTimeline(ArrayList<Tweet> serverTweets){
         sentTweets = serverTweets;
-        for (Tweet tweet : sentTweets){
+        for (int i=sentTweets.size()-1 ; i>=0 ; i--){
             try {
                 Node node = FXMLLoader.load(Client.class.getResource("Tweet.fxml"));
                 TweetController tweetController = (TweetController) node.getUserData();
-                tweetController.showTweet(tweet);
+                tweetController.showTweet(sentTweets.get(i));
                 timeline.getChildren().add(node);
             } catch (Exception ignore){
                 System.out.println("toye show timeline error dari");
