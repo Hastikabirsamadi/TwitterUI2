@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -45,6 +46,16 @@ public class ShowProfileController implements Initializable {
     private Label followingNum;
     @FXML
     private Label followerNum;
+
+    @FXML
+    private TextField editedBio;
+    @FXML
+    private TextField editedWebsite;
+    @FXML
+    private TextField editedLocation;
+    @FXML
+    private Label error;
+    private boolean hasError = false;
 
     private User user;
 
@@ -91,6 +102,55 @@ public class ShowProfileController implements Initializable {
         }
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void editProfile(ActionEvent event) throws IOException, ClassNotFoundException {
+        String biography = editedBio.getText();
+        if (biography.length() == 0){
+            biography = user.getPersonalInfo().getBio();
+        }
+        String loc = editedLocation.getText();
+        if (loc.length() == 0){
+            loc = user.getPersonalInfo().getLocation();
+        }
+        String web = editedWebsite.getText();
+        if (web.length() == 0){
+            web = user.getPersonalInfo().getWebsite();
+        }
+        hasError = false;
+        try {
+            Client.editProfile(biography, web, loc);
+        }
+        catch (IllegalArgumentException e){
+            hasError = true;
+            error.setText(e.getMessage());
+        }
+        catch (IOException | ClassNotFoundException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        if (!hasError){
+            backToShowProfile(event);
+        }
+    }
+
+    public void backToShowProfile(ActionEvent event) throws IOException, ClassNotFoundException {
+        Client.out.writeObject("0");
+        Button button = (Button) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene ;
+        if (root != null) {
+            scene = new Scene(root);
+            stage.setScene(scene);
+            Client.showMyProfile((ShowProfileController) root.getUserData());
+            stage.show();
+        }
     }
 
 
