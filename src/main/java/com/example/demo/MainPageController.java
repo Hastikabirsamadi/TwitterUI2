@@ -99,7 +99,7 @@ public class MainPageController implements Initializable {
         try {
             root=loader.load();
         }catch (IOException e){
-            System.out.println("KOMAK!");
+            System.out.println("KOMAK!1");
         }
         Stage stage = (Stage) imageView.getScene().getWindow();
         Scene scene ;

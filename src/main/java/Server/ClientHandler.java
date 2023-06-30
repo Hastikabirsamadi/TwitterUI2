@@ -69,9 +69,10 @@ public class ClientHandler implements Runnable {
                                         out.writeObject(user.timeline());
                                         System.out.println("timeline SENT!");
                                     }
-                                    case "2" -> {
+                                    case "2" -> { //show my profile
                                         out.writeObject(user);
                                         System.out.println("user info sent");
+
                                     }
                                     case "5" -> {
                                         System.out.println(user.getUsername() + " is adding a tweet...");

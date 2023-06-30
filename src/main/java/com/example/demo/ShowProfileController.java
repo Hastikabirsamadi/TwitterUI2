@@ -60,7 +60,7 @@ public class ShowProfileController implements Initializable {
         followerNum.setText(Integer.toString(user.getFollowers().size()));
     }
 
-    public static void switchToMainPage(MouseEvent event) throws IOException, ClassNotFoundException {
+    public void backToMainPage(MouseEvent event) throws IOException, ClassNotFoundException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -75,8 +75,8 @@ public class ShowProfileController implements Initializable {
         stage.show();
     }
 
-    public void switchToMainMenu(MouseEvent event) { // log out
-        ImageView logout = (ImageView) event.getSource();
+    public void switchToMainMenu(ActionEvent event) { // log out
+        Button logout = (Button) event.getSource();
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("FirstPage.fxml"));
         Parent root = null;
         try {
@@ -100,4 +100,5 @@ public class ShowProfileController implements Initializable {
         parent.setUserData(this);
 
     }
+
 }

@@ -80,7 +80,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="444.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#switchToMainMenu" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #fefefe; -fx-background-radius: 50;" text="log out" textFill="#d91212">
+      <Button layoutX="444.0" layoutY="174.0" mnemonicParsing="false" onAction="#switchToMainMenu" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #fefefe; -fx-background-radius: 50;" text="log out" textFill="#d91212">
          <font>
             <Font size="14.0" />
          </font>
@@ -90,7 +90,7 @@
             <Image url="@../logout2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="9.0" layoutY="14.0" onMouseClicked="#switchToMainPage">
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="9.0" layoutY="14.0" onMouseClicked="#backToMainPage">
          <image>
             <Image url="@../back1.png" />
          </image>
