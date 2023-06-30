@@ -9,9 +9,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" prefHeight="400.0" prefWidth="527.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShowProfileController">
+<AnchorPane fx:id="parent" prefHeight="414.0" prefWidth="548.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ShowProfileController">
    <children>
-      <Line endX="226.99993896484375" endY="0.9999847412109375" layoutX="320.0" layoutY="131.0" startX="-310.0" startY="-1.52587890625E-5" />
+      <Line endX="226.99993896484375" endY="0.9999847412109375" layoutX="320.0" layoutY="131.0" startX="-320.0" startY="0.9999847412109375" />
       <Circle fx:id="avatar" fill="#fefefe" layoutX="81.0" layoutY="143.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="name" layoutX="63.0" layoutY="196.0">
          <font>
@@ -54,22 +54,22 @@
             <Image url="@../calander-icon.png" />
          </image>
       </ImageView>
-      <Label fx:id="followingNum" layoutX="64.0" layoutY="379.0" text="followingNum">
+      <Label fx:id="followingNum" layoutX="64.0" layoutY="379.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="followerNum" layoutX="262.0" layoutY="379.0" text="followerNum">
+      <Label fx:id="followerNum" layoutX="177.0" layoutY="379.0" prefHeight="19.0" prefWidth="20.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="157.0" layoutY="379.0" text="Following" textFill="#635d5d">
+      <Label layoutX="84.0" layoutY="379.0" text="Following" textFill="#635d5d">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="348.0" layoutY="379.0" text="Followers" textFill="#635d5d">
+      <Label layoutX="201.0" layoutY="379.0" text="Followers" textFill="#635d5d">
          <font>
             <Font size="14.0" />
          </font>
@@ -80,7 +80,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="444.0" layoutY="174.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #fefefe; -fx-background-radius: 50;" text="log out" textFill="#d91212">
+      <Button layoutX="444.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#switchToMainMenu" prefHeight="31.0" prefWidth="70.0" style="-fx-background-color: #fefefe; -fx-background-radius: 50;" text="log out" textFill="#d91212">
          <font>
             <Font size="14.0" />
          </font>
@@ -90,7 +90,7 @@
             <Image url="@../logout2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="24.0" layoutY="24.0">
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="9.0" layoutY="14.0" onMouseClicked="#switchToMainPage">
          <image>
             <Image url="@../back1.png" />
          </image>
