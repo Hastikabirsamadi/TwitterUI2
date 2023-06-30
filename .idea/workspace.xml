@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="back and log out added">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="edit profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ShowProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ShowProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/addTweet.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/editProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/showProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/showProfile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688121886709</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="edit profile">
+      <created>1688127046840</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1688127046840</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,7 +348,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sign up and sign in  completed" />
     <MESSAGE value="add tweet and main page controller" />
     <MESSAGE value="tweet debug" />
     <MESSAGE value="Added icons" />
@@ -370,6 +372,7 @@
     <MESSAGE value="show my profile test5" />
     <MESSAGE value="show my profile works :)" />
     <MESSAGE value="back and log out added" />
-    <option name="LAST_COMMIT_MESSAGE" value="back and log out added" />
+    <MESSAGE value="edit profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit profile" />
   </component>
 </project>

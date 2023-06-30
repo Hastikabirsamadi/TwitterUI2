@@ -72,7 +72,21 @@ public class ClientHandler implements Runnable {
                                     case "2" -> { //show my profile
                                         out.writeObject(user);
                                         System.out.println("user info sent");
-
+                                        while (true) {
+                                            String profileChoice = (String) in.readObject();
+                                            if(profileChoice.equals("1")) {
+                                                for(User aUser : ServerManager.getUsers().values()) {
+                                                    if(aUser.getUsername().equals(user.getUsername())) {
+                                                        PersonalInfo personalInfo = (PersonalInfo) in.readObject();
+                                                        user.setPersonalInfo(personalInfo);
+                                                        aUser.setPersonalInfo(personalInfo);
+                                                    }
+                                                }
+                                            }
+                                            else {
+                                                break;
+                                            }
+                                        }
                                     }
                                     case "5" -> {
                                         System.out.println(user.getUsername() + " is adding a tweet...");
