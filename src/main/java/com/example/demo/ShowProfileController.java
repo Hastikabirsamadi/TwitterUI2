@@ -82,7 +82,7 @@ public class ShowProfileController implements Initializable {
         try {
             root=loader.load();
         }catch (IOException e){
-            System.out.println("KOMAK!");
+            System.out.println("KOMAK koskesh!");
         }
         Stage stage = (Stage) logout.getScene().getWindow();
         Scene scene = null;
