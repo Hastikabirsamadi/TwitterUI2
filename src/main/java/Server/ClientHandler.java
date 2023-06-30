@@ -62,28 +62,30 @@ public class ClientHandler implements Runnable {
                             out.writeObject("signed up successfully!");
                             while (true) {
                                 String secondChoice = (String) in.readObject();
-                                if (secondChoice.equals("1")) {
-                                    System.out.println("showing timeline for " + user.getUsername());
-                                    System.out.println(user.timeline());
-                                    out.writeObject(user.timeline());
-                                    System.out.println("timeline SENT!");
-                                }
-                                else if(secondChoice.equals("2")) {
-                                    out.writeObject(user);
-                                    System.out.println("user info sent");
-                                }
-                                else if (secondChoice.equals("5")) {
-                                    System.out.println(user.getUsername() + " is adding a tweet...");
-                                    Tweet tweet = (Tweet) in.readObject();
-                                    tweet.setAuthor(user.getUsername());
-                                    user.tweet(tweet);
-                                    System.out.println("user '" + user.getUsername() + "' added tweet successfully");
-                                    out.writeObject("tweet added successfully!");
-                                    ServerManager.writeTweetFile(ServerManager.getTweets());
-                                    ServerManager.readTweetFile();
-                                }
-                                else if (secondChoice.equals("0")) {
-                                    break outer;
+                                switch (secondChoice) {
+                                    case "1" -> {
+                                        System.out.println("showing timeline for " + user.getUsername());
+                                        System.out.println(user.timeline());
+                                        out.writeObject(user.timeline());
+                                        System.out.println("timeline SENT!");
+                                    }
+                                    case "2" -> {
+                                        out.writeObject(user);
+                                        System.out.println("user info sent");
+                                    }
+                                    case "5" -> {
+                                        System.out.println(user.getUsername() + " is adding a tweet...");
+                                        Tweet tweet = (Tweet) in.readObject();
+                                        tweet.setAuthor(user.getUsername());
+                                        user.tweet(tweet);
+                                        System.out.println("user '" + user.getUsername() + "' added tweet successfully");
+                                        out.writeObject("tweet added successfully!");
+                                        ServerManager.writeTweetFile(ServerManager.getTweets());
+                                        ServerManager.readTweetFile();
+                                    }
+                                    case "0" -> {
+                                        break outer;
+                                    }
                                 }
                                 ServerManager.writeFile(ServerManager.getUsers());
                                 ServerManager.writeTweetFile(ServerManager.getTweets());
@@ -102,28 +104,30 @@ public class ClientHandler implements Runnable {
                             out.writeObject("signed in successfully!");
                             while (true) {
                                 String secondChoice = (String) in.readObject();
-                                if (secondChoice.equals("1")) {
-                                    System.out.println("showing timeline for " + user.getUsername());
-                                    System.out.println(user.timeline());
-                                    out.writeObject(user.timeline());
-                                    System.out.println("timeline SENT!");
-                                }
-                                else if(secondChoice.equals("2")) {
-                                    out.writeObject(user);
-                                    System.out.println("user info sent");
-                                }
-                                else if (secondChoice.equals("5")) {
-                                    System.out.println(user.getUsername() + " is adding a tweet...");
-                                    Tweet tweet = (Tweet) in.readObject();
-                                    tweet.setAuthor(user.getUsername());
-                                    user.tweet(tweet);
-                                    System.out.println("user '" + user.getUsername() + "' added tweet successfully");
-                                    out.writeObject("tweet added successfully!");
-                                    ServerManager.writeTweetFile(ServerManager.getTweets());
-                                    ServerManager.readTweetFile();
-                                }
-                                else if(secondChoice.equals("0")) { //logout
-                                    break outer;
+                                switch (secondChoice) {
+                                    case "1" -> {
+                                        System.out.println("showing timeline for " + user.getUsername());
+                                        System.out.println(user.timeline());
+                                        out.writeObject(user.timeline());
+                                        System.out.println("timeline SENT!");
+                                    }
+                                    case "2" -> {
+                                        out.writeObject(user);
+                                        System.out.println("user info sent");
+                                    }
+                                    case "5" -> {
+                                        System.out.println(user.getUsername() + " is adding a tweet...");
+                                        Tweet tweet = (Tweet) in.readObject();
+                                        tweet.setAuthor(user.getUsername());
+                                        user.tweet(tweet);
+                                        System.out.println("user '" + user.getUsername() + "' added tweet successfully");
+                                        out.writeObject("tweet added successfully!");
+                                        ServerManager.writeTweetFile(ServerManager.getTweets());
+                                        ServerManager.readTweetFile();
+                                    }
+                                    case "0" -> {
+                                        break outer;
+                                    }
                                 }
                                 ServerManager.writeFile(ServerManager.getUsers());
                                 ServerManager.writeTweetFile(ServerManager.getTweets());

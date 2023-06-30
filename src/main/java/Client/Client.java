@@ -143,11 +143,11 @@ public class Client extends Application {
         System.out.println(res);
     }
 
-    public static void showMyProfile() throws IOException, ClassNotFoundException {
+    public static void showMyProfile(ShowProfileController showProfileController) throws IOException, ClassNotFoundException {
         out.writeObject("2");
         User user1 = (User) in.readObject();
-        Node node = FXMLLoader.load(Client.class.getResource("showProfile.fxml"));
-        ShowProfileController showProfileController = (ShowProfileController) node.getUserData();
+        System.out.println(user1.getUsername() + " is sent");
+        System.out.println("mn injam");
         showProfileController.showProfile(user1);
     }
 
