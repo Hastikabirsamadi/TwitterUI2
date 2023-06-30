@@ -133,6 +133,25 @@ public class ShowProfileController implements Initializable {
         }
     }
 
+    public void switchToEditProfile(ActionEvent event) throws IOException, ClassNotFoundException {
+        Button button = (Button) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("editProfile.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!1");
+        }
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene ;
+        if (root != null) {
+            scene = new Scene(root);
+            stage.setScene(scene);
+            Client.showMyProfile((ShowProfileController) root.getUserData());
+            stage.show();
+        }
+    }
+
     public void backToShowProfile(ActionEvent event) throws IOException, ClassNotFoundException {
         Client.out.writeObject("0");
         Button button = (Button) event.getSource();
