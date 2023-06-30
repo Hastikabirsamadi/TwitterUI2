@@ -149,14 +149,44 @@ public class Client extends Application {
     }
 
 
-    public static void editProfile(String bio, String website, String location) throws IOException, ClassNotFoundException, InterruptedException {
-        out.writeObject("1");
-        if (bio.length() > 160) {
-            throw new IllegalArgumentException("You can at last enter 160 characters!!!");
-        }
-       PersonalInfo personalInfo = new PersonalInfo(website, location, bio);
-        out.writeObject(personalInfo);
-    }
+//    public static void editProfile() throws IOException, ClassNotFoundException, InterruptedException {
+//        out.writeObject("2");
+//        if (bio.length() > 160) {
+//            System.out.println("You can at last enter 160 characters!!!");
+//            continue;
+//        }
+//        break;
+//        if(bio.toString().
+//
+//    equals("exit\n"))
+//
+//    {
+//        out.writeObject("exit");
+//        return;
+//    }
+//        System.out.println("Location:");
+//    location =input.nextLine();
+//        if(location.equals("exit"))
+//
+//    {
+//        out.writeObject("exit");
+//        return;
+//    }
+//        System.out.println("Website:");
+//    website =input.nextLine();
+//        if(website.equals("exit"))
+//
+//    {
+//        out.writeObject("exit");
+//        return;
+//    }
+//        out.writeObject("ok");
+//    PersonalInfo personalInfo = new PersonalInfo(website, location, bio);
+//        out.writeObject(personalInfo);
+//        Thread.sleep(300);
+//    String res = (String) in.readObject();
+//        System.out.println(res);
+//}
 
     public static void main(String[] args) {
         launch(args);
