@@ -38,11 +38,8 @@ public class ShowProfileController implements Initializable {
     private User user;
 
     public void showProfile(User serverUser){
-        System.out.println(serverUser.getUsername() + " is here");
         user = serverUser;
-        System.out.println(user.getUsername() + " is here");
         name.setText(user.getFirstName());
-      //  System.out.println(name.getText());
         username.setText(user.getUsername());
         bio.setText(user.getPersonalInfo().getBio());
         location.setText(user.getPersonalInfo().getLocation());
