@@ -102,13 +102,13 @@ public class MainPageController implements Initializable {
             System.out.println("KOMAK!");
         }
         Stage stage = (Stage) imageView.getScene().getWindow();
-        Scene scene = null;
+        Scene scene ;
         if (root != null) {
             scene = new Scene(root);
+            stage.setScene(scene);
+            Client.showMyProfile((ShowProfileController) root.getUserData());
+            stage.show();
         }
-        stage.setScene(scene);
-        Client.showMyProfile();
-        stage.show();
     }
 
     @Override
