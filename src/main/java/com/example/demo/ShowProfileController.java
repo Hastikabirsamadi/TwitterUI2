@@ -25,7 +25,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ShowProfileController implements Initializable {
-    public AnchorPane parent = new AnchorPane();
+    public AnchorPane parent;
     @FXML
     private Circle avatar;
     @FXML
@@ -133,6 +133,24 @@ public class ShowProfileController implements Initializable {
         }
     }
 
+    public void switchToEditProfile(ActionEvent event) throws IOException, ClassNotFoundException {
+        Button button = (Button) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("editProfile.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!1");
+        }
+        Stage stage = (Stage) button.getScene().getWindow();
+        Scene scene ;
+        if (root != null) {
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
     public void backToShowProfile(ActionEvent event) throws IOException, ClassNotFoundException {
         Client.out.writeObject("0");
         Button button = (Button) event.getSource();
@@ -158,6 +176,7 @@ public class ShowProfileController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         parent.setUserData(this);
+
     }
 
 }
