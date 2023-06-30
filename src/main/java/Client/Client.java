@@ -146,8 +146,6 @@ public class Client extends Application {
     public static void showMyProfile(ShowProfileController showProfileController) throws IOException, ClassNotFoundException {
         out.writeObject("2");
         User user1 = (User) in.readObject();
-        System.out.println(user1.getUsername() + " is sent");
-        System.out.println("mn injam");
         showProfileController.showProfile(user1);
     }
 
