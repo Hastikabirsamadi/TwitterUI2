@@ -152,7 +152,7 @@ public class ServerManager {
     public static ArrayList<User> searchUser(String word) {
         ArrayList<User> foundUsers = new ArrayList<>();
         for(User user : users.values()) {
-            if (user.getUsername().contains(word) || user.getFirstName().contains(word) || user.getLastName().contains(word)) {
+            if (user.getUsername().contains(word) || user.getFirstName().contains(word)) {
                 foundUsers.add(user);
             }
         }

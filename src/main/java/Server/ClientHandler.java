@@ -153,6 +153,10 @@ public class ClientHandler implements Runnable {
                                             }
                                         }
                                     }
+                                    case "4" -> {
+                                        String word = (String) in.readObject(); // receiving word to search
+                                        out.writeObject(ServerManager.searchUser(word));
+                                    }
                                     case "5" -> {
                                         System.out.println(user.getUsername() + " is adding a tweet...");
                                         Tweet tweet = (Tweet) in.readObject();
