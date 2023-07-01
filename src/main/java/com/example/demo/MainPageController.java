@@ -107,7 +107,6 @@ public class MainPageController implements Initializable {
         if (root != null) {
             scene = new Scene(root);
             stage.setScene(scene);
-            Client.showMyProfile((ShowProfileController) root.getUserData());
             stage.show();
         }
     }
@@ -125,7 +124,6 @@ public class MainPageController implements Initializable {
         if (root != null) {
             scene = new Scene(root);
             stage.setScene(scene);
-            Client.showMyProfile((ShowProfileController) root.getUserData());
             stage.show();
         }
     }

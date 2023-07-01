@@ -109,7 +109,6 @@ public class ShowProfileController implements Initializable {
     }
 
     public void editProfile(ActionEvent event) throws IOException, ClassNotFoundException {
-      //  System.out.println(user.getUsername() + " is here");
         Client.out.writeObject("1");
         PersonalInfo serverPersonalInfo = (PersonalInfo)Client.in.readObject();
         String biography = editedBio.getText();
@@ -160,13 +159,6 @@ public class ShowProfileController implements Initializable {
     }
 
     public void backToShowProfile(ActionEvent event) throws IOException, ClassNotFoundException {
-//        User updatedUser = new User();
-//        try {
-//            updatedUser = (User) Client.in.readObject();
-//        } catch (NullPointerException e) {
-//            System.out.println("null exception");
-//            e.printStackTrace();
-//        }
         Button button = (Button) event.getSource();
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
         Parent root = null;
@@ -181,7 +173,6 @@ public class ShowProfileController implements Initializable {
             System.out.println("check");
             scene = new Scene(root);
             stage.setScene(scene);
-//            showProfile((User)Client.in.readObject());
             Client.showMyProfile((ShowProfileController) root.getUserData());
             stage.show();
         }

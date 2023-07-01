@@ -2,15 +2,23 @@ package com.example.demo;
 
 import Client.Client;
 import Model.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,6 +30,8 @@ public class SearchController implements Initializable {
     @FXML
     private TextField searchChoice;
     @FXML
+    private Button searchButton;
+    @FXML
     private Label error;
     @FXML
     private Pane searchBox;
@@ -30,17 +40,24 @@ public class SearchController implements Initializable {
     @FXML
     private Label username;
     @FXML
-    private VBox searchOption = new VBox();
+    private VBox searchOptions = new VBox();
     private User user;
-    public void search() throws IOException, ClassNotFoundException {
-        String word = searchChoice.getText();
-        Client.out.writeObject("4");
-        Client.out.writeObject(word);
-        ArrayList<User> foundUsers = (ArrayList<User>) Client.in.readObject();
-        if (foundUsers.size() == 0){
-            error.setText("Not Found!");
+    public void search(ActionEvent event) {
+        try {
+            String word = searchChoice.getText();
+            Client.out.writeObject("4");
+            Client.out.writeObject(word);
+            ArrayList<User> foundUsers = (ArrayList<User>) Client.in.readObject();
+            if (foundUsers.size() == 0) {
+                error.setText("Not Found!");
+            }
+            showSearchOptions(foundUsers);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        showSearchOptions(foundUsers);
+    }
+    public void handleSearch() {
+        searchButton.setOnAction(this::search);
     }
     public Pane showSearch(User serverUser){
         user = serverUser;
@@ -56,12 +73,31 @@ public class SearchController implements Initializable {
             try {
                 Node node = FXMLLoader.load(Client.class.getResource("BriefProfile.fxml"));
                 showSearch(user);
-                searchOption.getChildren().add(node);
+                searchOptions.getChildren().add(node);
             } catch (Exception ignore){
                 System.out.println("toye show search error dari");
             }
         }
     }
+
+    public void switchToSearchOptions(MouseEvent event) throws IOException, ClassNotFoundException {
+        ImageView imageView = (ImageView) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("SearchOptions.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!");
+        }
+        Stage stage = (Stage) imageView.getScene().getWindow();
+        Scene scene = null;
+        if (root != null) {
+            scene = new Scene(root);
+        }
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
