@@ -57,9 +57,9 @@ public class SearchController implements Initializable {
             e.printStackTrace();
         }
     }
-    public void handleSearch() {
-        searchButton.setOnAction(this::search);
-    }
+//    public void handleSearch() {
+//        searchButton.setOnAction(this::search);
+//    }
     public Pane showSearch(User serverUser){
         user = serverUser;
         name.setText(user.getFirstName());
