@@ -11,10 +11,9 @@
       <Circle fill="#fefefe" layoutX="43.0" layoutY="43.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="name" layoutX="92.0" layoutY="25.0" prefHeight="18.0" prefWidth="58.0" text="name" />
       <Label fx:id="username" layoutX="92.0" layoutY="43.0" prefHeight="18.0" prefWidth="90.0" text="username" textFill="#635d5d" />
-      <Button layoutX="366.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #08a0e9; -fx-background-radius: 50;" text="Show profile" textFill="#fefefe">
+      <Button layoutX="368.0" layoutY="31.0" mnemonicParsing="false" style="-fx-background-color: #08a0e9; -fx-background-radius: 50;" text="Show profile" textFill="#fefefe">
          <font>
             <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
+         </font></Button>
    </children>
 </AnchorPane>
