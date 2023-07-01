@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="edit profile3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/EditProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="SearchController class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +342,13 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۳۴" />
       <updated>1688135147676</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎−۰۰۰۳۵" summary="SearchController class">
+      <created>1688212716932</created>
+      <option name="number" value="LOCAL‎−۰۰۰۳۵" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۳۵" />
+      <updated>1688212716932</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -360,7 +363,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tweet debug" />
     <MESSAGE value="Added icons" />
     <MESSAGE value="tweet fxml completed" />
     <MESSAGE value="show tweet method added" />
@@ -385,6 +387,7 @@
     <MESSAGE value="back and log out added" />
     <MESSAGE value="edit profile" />
     <MESSAGE value="edit profile3" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit profile3" />
+    <MESSAGE value="SearchController class" />
+    <option name="LAST_COMMIT_MESSAGE" value="SearchController class" />
   </component>
 </project>
