@@ -57,21 +57,25 @@ public class ShowProfileController implements Initializable {
     private Label error;
     private boolean hasError = false;
 
-    private User user;
+  //  private User user;
 
     public void showProfile(User serverUser){
-        user = serverUser;
-        name.setText(user.getFirstName());
-        username.setText(user.getUsername());
-        bio.setText(user.getPersonalInfo().getBio());
-        location.setText(user.getPersonalInfo().getLocation());
-        website.setText(user.getPersonalInfo().getWebsite());
-        joinedDate.setText(user.getSignupDate().getMonth() + " "  + user.getSignupDate().getYear());
-        followingNum.setText(Integer.toString(user.getFollowings().size()));
-        followerNum.setText(Integer.toString(user.getFollowers().size()));
+      //  user = serverUser;
+      //  System.out.println(Suse.getUsername());
+        name.setText(serverUser.getFirstName());
+        username.setText(serverUser.getUsername());
+        bio.setText(serverUser.getPersonalInfo().getBio());
+        System.out.println("server sent bio : " + serverUser.getPersonalInfo().getBio());
+        System.out.println("new bio is : " + bio.getText());
+        location.setText(serverUser.getPersonalInfo().getLocation());
+        website.setText(serverUser.getPersonalInfo().getWebsite());
+        joinedDate.setText(serverUser.getSignupDate().getMonth() + " "  + serverUser.getSignupDate().getYear());
+        followingNum.setText(Integer.toString(serverUser.getFollowings().size()));
+        followerNum.setText(Integer.toString(serverUser.getFollowers().size()));
     }
 
     public void backToMainPage(MouseEvent event) throws IOException, ClassNotFoundException {
+        Client.out.writeObject("0");
         Parent root = FXMLLoader.load(Objects.requireNonNull(Client.class.getResource("MainPage.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -105,17 +109,20 @@ public class ShowProfileController implements Initializable {
     }
 
     public void editProfile(ActionEvent event) throws IOException, ClassNotFoundException {
+      //  System.out.println(user.getUsername() + " is here");
+        Client.out.writeObject("1");
+        PersonalInfo serverPersonalInfo = (PersonalInfo)Client.in.readObject();
         String biography = editedBio.getText();
         if (biography.length() == 0){
-            biography = user.getPersonalInfo().getBio();
+            biography = serverPersonalInfo.getBio();
         }
         String loc = editedLocation.getText();
         if (loc.length() == 0){
-            loc = user.getPersonalInfo().getLocation();
+            loc = serverPersonalInfo.getLocation();
         }
         String web = editedWebsite.getText();
         if (web.length() == 0){
-            web = user.getPersonalInfo().getWebsite();
+            web = serverPersonalInfo.getWebsite();
         }
         hasError = false;
         try {
@@ -138,21 +145,28 @@ public class ShowProfileController implements Initializable {
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("editProfile.fxml"));
         Parent root = null;
         try {
-            root=loader.load();
-        }catch (IOException e){
-            System.out.println("KOMAK!1");
+            root = loader.load();
+        } catch (IOException e) {
+           // System.out.println("KOMAK azizm");
+            e.printStackTrace();
         }
         Stage stage = (Stage) button.getScene().getWindow();
-        Scene scene ;
+        Scene scene = null;
         if (root != null) {
             scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         }
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void backToShowProfile(ActionEvent event) throws IOException, ClassNotFoundException {
-        Client.out.writeObject("0");
+//        User updatedUser = new User();
+//        try {
+//            updatedUser = (User) Client.in.readObject();
+//        } catch (NullPointerException e) {
+//            System.out.println("null exception");
+//            e.printStackTrace();
+//        }
         Button button = (Button) event.getSource();
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
         Parent root = null;
@@ -164,8 +178,10 @@ public class ShowProfileController implements Initializable {
         Stage stage = (Stage) button.getScene().getWindow();
         Scene scene ;
         if (root != null) {
+            System.out.println("check");
             scene = new Scene(root);
             stage.setScene(scene);
+//            showProfile((User)Client.in.readObject());
             Client.showMyProfile((ShowProfileController) root.getUserData());
             stage.show();
         }

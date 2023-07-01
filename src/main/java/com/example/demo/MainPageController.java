@@ -93,6 +93,7 @@ public class MainPageController implements Initializable {
         stage.show();
     }
     public void switchToShowProfile(MouseEvent event) throws IOException, ClassNotFoundException {
+        Client.out.writeObject("2");
         ImageView imageView = (ImageView) event.getSource();
         FXMLLoader loader = new FXMLLoader(Client.class.getResource("showProfile.fxml"));
         Parent root = null;

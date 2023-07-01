@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fefefe;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SearchController">
+   <children>
+      <VBox layoutX="1.0" layoutY="56.0" prefHeight="344.0" prefWidth="600.0" style="-fx-background-color: #fefefe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0" />
+      <Line endX="100.0" layoutX="414.0" layoutY="42.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#08a0e9" />
+      <TextField fx:id="editedBio" layoutX="84.0" layoutY="14.0" prefHeight="26.0" prefWidth="431.0" promptText="Search Twitter" style="-fx-background-color: #fefefe;" />
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../back1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

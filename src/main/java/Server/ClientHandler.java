@@ -65,8 +65,7 @@ public class ClientHandler implements Runnable {
                                 switch (secondChoice) {
                                     case "1" -> {
                                         System.out.println("showing timeline for " + user.getUsername());
-                                        System.out.println(user.timeline());
-                                        out.writeObject(user.timeline());
+//                                        out.writeObject(user.timeline());
                                         System.out.println("timeline SENT!");
                                     }
                                     case "2" -> { //show my profile
@@ -74,7 +73,9 @@ public class ClientHandler implements Runnable {
                                         System.out.println("user info sent");
                                         while (true) {
                                             String profileChoice = (String) in.readObject();
-                                            if(profileChoice.equals("1")) {
+                                            if(profileChoice.equals("1")) { //edit profile
+                                                out.writeObject(user.getPersonalInfo());
+                                                System.out.println(user.getUsername() + " pi is sent!");
                                                 for(User aUser : ServerManager.getUsers().values()) {
                                                     if(aUser.getUsername().equals(user.getUsername())) {
                                                         PersonalInfo personalInfo = (PersonalInfo) in.readObject();
@@ -129,6 +130,28 @@ public class ClientHandler implements Runnable {
                                     case "2" -> {
                                         out.writeObject(user);
                                         System.out.println("user info sent");
+                                        while (true) {
+                                            String profileChoice = (String) in.readObject();
+                                            if(profileChoice.equals("1")) { //edit profile
+                                                out.writeObject(user.getPersonalInfo());
+                                                System.out.println(user.getUsername() + " bio is : " + user.getPersonalInfo().getBio());
+                                                System.out.println(user.getUsername() + " pi is sent!");
+                                                PersonalInfo personalInfo = (PersonalInfo) in.readObject();
+                                                for(User aUser : ServerManager.getUsers().values()) {
+                                                    if(aUser.getUsername().equals(user.getUsername())) {
+                                                        user.setPersonalInfo(personalInfo);
+                                                        aUser.setPersonalInfo(personalInfo);
+                                                        break;
+                                                    }
+                                                }
+                                                out.writeObject(user);
+                                                System.out.println(user.getUsername() + " bio is : " + user.getPersonalInfo().getBio());
+                                                System.out.println("pi is sent again");
+                                            }
+                                            else {
+                                                break;
+                                            }
+                                        }
                                     }
                                     case "5" -> {
                                         System.out.println(user.getUsername() + " is adding a tweet...");
