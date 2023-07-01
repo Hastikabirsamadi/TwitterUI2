@@ -151,11 +151,13 @@ public class ServerManager {
     }
     public static ArrayList<User> searchUser(String word) {
         ArrayList<User> foundUsers = new ArrayList<>();
+        System.out.println("We are searching for " + word);
         for(User user : users.values()) {
             if (user.getUsername().contains(word) || user.getFirstName().contains(word)) {
                 foundUsers.add(user);
             }
         }
+        System.out.println(foundUsers);
         return foundUsers;
     }
     public static HashMap<String, User> getUsers() {

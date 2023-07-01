@@ -4,6 +4,7 @@ import Server.ServerManager;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serial;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +13,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class User implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 6470817913146484535L;
 
     //ya email ya phoneNumber bayad bashe
     private String username;
@@ -36,7 +40,7 @@ public class User implements Serializable {
     private ArrayList<Tweet> retweetTweets = new ArrayList<>();
 
     public User(String username, String password, String firstName, String lastName, String email, String phoneNumber,
-                String country, LocalDate birthDate) throws ParseException {
+                String country, LocalDate birthDate) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -49,6 +53,23 @@ public class User implements Serializable {
         this.SignedUp = false;
         this.SignedIn = false;
         this.personalInfo = new PersonalInfo("-", "-", "-");
+    }
+
+    public User copy(PersonalInfo newInfo) {
+        User o = new User(username, password, firstName, lastName, email, phoneNumber, country, birthDate);
+        o.personalInfo = newInfo;
+        o.blackList = blackList;
+        o.likedTweets = likedTweets;
+        o.retweetTweets = retweetTweets;
+        o.followings = followings;
+        o.followers = followers;
+        o.signupDate = signupDate;
+        o.SignedIn = SignedIn;
+        o.SignedUp = SignedUp;
+        o.tweets = tweets;
+        o.faveStar = faveStar;
+        o.lastModificationDate = lastModificationDate;
+        return o;
     }
 
     public User(String username, String password) {

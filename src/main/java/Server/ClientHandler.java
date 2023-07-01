@@ -51,7 +51,7 @@ public class ClientHandler implements Runnable {
                         break outer;
                     }
                     if (userChoice.equals("1")) {
-                        ServerManager.readFile();
+                        if (ServerManager.getUsers().isEmpty()) ServerManager.readFile();
                         ServerManager.readTweetFile();
                         System.out.println("user is signing up...");
                         User tempUser = (User) in.readObject();
@@ -79,7 +79,7 @@ public class ClientHandler implements Runnable {
                                                 for(User aUser : ServerManager.getUsers().values()) {
                                                     if(aUser.getUsername().equals(user.getUsername())) {
                                                         PersonalInfo personalInfo = (PersonalInfo) in.readObject();
-                                                        user.setPersonalInfo(personalInfo);
+                                                        user = user.copy(personalInfo);
                                                         aUser.setPersonalInfo(personalInfo);
                                                     }
                                                 }
@@ -109,7 +109,7 @@ public class ClientHandler implements Runnable {
                         }
                     }
                     else if(userChoice.equals("2")) {
-                        ServerManager.readFile();
+                        if (ServerManager.getUsers().isEmpty()) ServerManager.readFile();
                         ServerManager.readTweetFile();
                         System.out.println("user is signing in...");
                         User tempUser = (User) in.readObject();
@@ -139,7 +139,7 @@ public class ClientHandler implements Runnable {
                                                 PersonalInfo personalInfo = (PersonalInfo) in.readObject();
                                                 for(User aUser : ServerManager.getUsers().values()) {
                                                     if(aUser.getUsername().equals(user.getUsername())) {
-                                                        user.setPersonalInfo(personalInfo);
+                                                        user = user.copy(personalInfo);
                                                         aUser.setPersonalInfo(personalInfo);
                                                         break;
                                                     }

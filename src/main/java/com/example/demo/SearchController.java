@@ -12,9 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -40,9 +38,10 @@ public class SearchController implements Initializable {
     @FXML
     private Label username;
     @FXML
-    private VBox searchOptions = new VBox();
-    private User user;
-    public void search(ActionEvent event) {
+    private VBox searchOptions;
+    //private User user;
+    public void search() {
+//        System.out.println("CLICKED");
         try {
             String word = searchChoice.getText();
             Client.out.writeObject("4");
@@ -56,47 +55,48 @@ public class SearchController implements Initializable {
             e.printStackTrace();
         }
     }
-    public void handleSearch() {
-        searchButton.setOnAction(this::search);
-    }
-    public Pane showSearch(User serverUser){
-        user = serverUser;
-        name.setText(user.getFirstName());
-        searchBox.getChildren().add(name);
-        username.setText(user.getUsername());
-        searchBox.getChildren().add(username);
-        return searchBox;
+//    public void handleSearch() {
+//        searchButton.setOnAction(this::search);
+//    }
+    public void showSearch(User serverUser){
+      //  user = serverUser;
+        name.setText(serverUser.getFirstName());
+        username.setText(serverUser.getUsername());
     }
 
     public void showSearchOptions(ArrayList<User> serverUser){
+        searchOptions.getChildren().clear();
         for (User user : serverUser){
             try {
                 Node node = FXMLLoader.load(Client.class.getResource("BriefProfile.fxml"));
-                showSearch(user);
+//                System.out.println(user.getUsername());
+                ((SearchController) node.getUserData()).showSearch(user);
                 searchOptions.getChildren().add(node);
             } catch (Exception ignore){
-                System.out.println("toye show search error dari");
+                ignore.printStackTrace();
+                //System.out.println("toye show search error dari");
             }
         }
     }
 
-    public void switchToSearchOptions(MouseEvent event) throws IOException, ClassNotFoundException {
-        ImageView imageView = (ImageView) event.getSource();
-        FXMLLoader loader = new FXMLLoader(Client.class.getResource("SearchOptions.fxml"));
-        Parent root = null;
-        try {
-            root=loader.load();
-        }catch (IOException e){
-            System.out.println("KOMAK!");
-        }
-        Stage stage = (Stage) imageView.getScene().getWindow();
-        Scene scene = null;
-        if (root != null) {
-            scene = new Scene(root);
-        }
-        stage.setScene(scene);
-        stage.show();
-    }
+//    public void switchToSearchOptions(ActionEvent event) throws IOException, ClassNotFoundException {
+//        Button button = (Button) event.getSource();
+//        FXMLLoader loader = new FXMLLoader(Client.class.getResource("Search.fxml"));
+//        Parent root = null;
+//        try {
+//            root=loader.load();
+//        }catch (IOException e){
+//            System.out.println("KOMAK!");
+//        }
+//        Stage stage = (Stage) button.getScene().getWindow();
+//        Scene scene = null;
+//        if (root != null) {
+//            scene = new Scene(root);
+//        }
+//        stage.setScene(scene);
+//        //((SearchController) root.getUserData()).search();
+//        stage.show();
+//    }
 
 
     @Override

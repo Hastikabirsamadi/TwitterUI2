@@ -105,6 +105,7 @@ public class MainPageController implements Initializable {
         Stage stage = (Stage) imageView.getScene().getWindow();
         Scene scene ;
         if (root != null) {
+            Client.showMyProfile((ShowProfileController) root.getUserData());
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
