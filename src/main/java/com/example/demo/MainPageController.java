@@ -110,6 +110,24 @@ public class MainPageController implements Initializable {
             stage.show();
         }
     }
+    public void switchToSearch(MouseEvent event) throws IOException, ClassNotFoundException {
+        ImageView imageView = (ImageView) event.getSource();
+        FXMLLoader loader = new FXMLLoader(Client.class.getResource("Search.fxml"));
+        Parent root = null;
+        try {
+            root=loader.load();
+        }catch (IOException e){
+            System.out.println("KOMAK!1");
+        }
+        Stage stage = (Stage) imageView.getScene().getWindow();
+        Scene scene ;
+        if (root != null) {
+            scene = new Scene(root);
+            stage.setScene(scene);
+            Client.showMyProfile((ShowProfileController) root.getUserData());
+            stage.show();
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
