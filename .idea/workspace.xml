@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="search beginning">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Client/search1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b67ad279-2f3f-4471-8adc-30480959c333" name="Changes" comment="search completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/ServerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/ServerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/SearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/BriefProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/BriefProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/MainPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Client/Search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Client/Search.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -352,7 +345,14 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۳۴" />
       <updated>1688135147676</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="search completed">
+      <created>1688244602782</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1688244602782</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,7 +367,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tweet debug" />
     <MESSAGE value="Added icons" />
     <MESSAGE value="tweet fxml completed" />
     <MESSAGE value="show tweet method added" />
@@ -392,6 +391,7 @@
     <MESSAGE value="back and log out added" />
     <MESSAGE value="edit profile" />
     <MESSAGE value="edit profile3" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit profile3" />
+    <MESSAGE value="search completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="search completed" />
   </component>
 </project>

@@ -51,7 +51,9 @@ public class ClientHandler implements Runnable {
                         break outer;
                     }
                     if (userChoice.equals("1")) {
-                        if (ServerManager.getUsers().isEmpty()) ServerManager.readFile();
+                        if (ServerManager.getUsers().isEmpty())  {
+                            ServerManager.readFile();
+                        }
                         ServerManager.readTweetFile();
                         System.out.println("user is signing up...");
                         User tempUser = (User) in.readObject();
@@ -88,6 +90,10 @@ public class ClientHandler implements Runnable {
                                                 break;
                                             }
                                         }
+                                    }
+                                    case "4" -> {
+                                        String word = (String) in.readObject(); // receiving word to search
+                                        out.writeObject(ServerManager.searchUser(word));
                                     }
                                     case "5" -> {
                                         System.out.println(user.getUsername() + " is adding a tweet...");
@@ -154,8 +160,10 @@ public class ClientHandler implements Runnable {
                                         }
                                     }
                                     case "4" -> {
-                                        String word = (String) in.readObject(); // receiving word to search
-                                        out.writeObject(ServerManager.searchUser(word));
+                                        String word = (String) in.readObject();// receiving word to search
+                                        if(!word.equals("0")) {
+                                            out.writeObject(ServerManager.searchUser(word));
+                                        }
                                     }
                                     case "5" -> {
                                         System.out.println(user.getUsername() + " is adding a tweet...");

@@ -21,7 +21,7 @@
       </ScrollPane>
       <Line endX="47.4000244140625" endY="-1.1444091796875E-5" layoutX="384.0" layoutY="53.0" startX="-329.20001220703125" startY="-1.52587890625E-5" stroke="#08a0e9" />
       <TextField fx:id="searchChoice" layoutX="60.0" layoutY="22.0" prefHeight="26.0" prefWidth="350.0" promptText="Search Twitter" style="-fx-background-color: #fefefe;" />
-      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="16.0" layoutY="15.0">
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="16.0" layoutY="15.0" onMouseClicked="#backToMainPage">
          <image>
             <Image url="@../back1.png" />
          </image>
@@ -29,7 +29,7 @@
       <Label fx:id="error" alignment="TOP_LEFT" layoutX="69.0" layoutY="64.0" prefHeight="26.0" prefWidth="350.0" textFill="#ec1010" />
       <Button fx:id="searchButton" layoutX="419.0" layoutY="18.0" mnemonicParsing="false" onAction="#search" style="-fx-background-color: #fefefe;">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="19.0" >
+            <ImageView fitHeight="20.0" fitWidth="19.0">
                <image>
                   <Image url="@../search-icon.png" />
                </image>
